@@ -11,8 +11,11 @@ moved, etc.), please update the _API updates_ part (it helps opam library
 users)
 
 ## Version
+  * Bump version to 2.3.0~alpha~dev [#6045 @rjbou]
+  * Bump opam-root-version to 2.2 [#5980 @kit-ty-kate]
 
 ## Global CLI
+  * Add cli version 2.3 [#6045 @rjbou]
 
 ## Plugins
 
@@ -59,6 +62,8 @@ users)
 ## Opamfile
 
 ## External dependencies
+ * Always pass --no-version-check and --no-write-registry to Cygwin setup [#6046 @dra27]
+ * Use --quiet-mode noinput for the internal Cygwin installation (which is definitely a fully-specified command line) and --quiet-mode unattended for external Cygwin installations (in case the user does need to select something, e.g. a mirror) [#6046 @dra27]
 
 ## Format upgrade
 
@@ -67,6 +72,7 @@ users)
 ## VCS
 
 ## Build
+ * Synchronise opam-core.opam with opam-repository changes [#6043 @dra27]
 
 ## Infrastructure
 
@@ -99,6 +105,8 @@ users)
 
 ## Reftests
 ### Tests
+  * cli versioning: untie output from current major version [#6045 @rjbou]
+  * Set `opam-version` to 2.2 for some conflict message tests based on opam repository to stabilise their output [#6045 @rjbou]
 
 ### Engine
 
@@ -114,6 +122,7 @@ users)
 ## opam-repository
 
 ## opam-state
+ * `OpamStateConfig.opamroot_with_provenance`: restore previous behaviour to `OpamStateConfig.opamroot` for compatibility with third party code [#6047 @dra27]
 
 ## opam-solver
 
