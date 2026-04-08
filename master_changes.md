@@ -89,6 +89,7 @@ users)
   * Add the upcoming OCaml 5.5 (trunk) support when using dune's dev profile [#6670 @kit-ty-kate]
   * Update the download-if-missing patch to 3.1.0 [#6772 @kit-ty-kate]
   * Harden the Makefile's inline shell scripts [#6751 @kit-ty-kate]
+  * Add lower-bounds constraints to the dependencies that have none (`ocamlgraph` >= 1.8.8, `jsonm` >= 1.0.2, `swhid_core` >= 0.1, `uutf` >= 1.0.3) [#6878 @kit-ty-kate]
 
 ## Infrastructure
 

@@ -24,14 +24,14 @@ bug-reports: "https://github.com/ocaml/opam/issues"
 depends: [
   "ocaml" {>= "4.08.0"}
   "base-unix"
-  "ocamlgraph"
+  "ocamlgraph" {>= "1.8.8"}
   "re" {>= "1.9.0"}
   "dune" {>= "2.8.0"}
   "sha" {>= "1.13"}
-  "jsonm"
-  "swhid_core"
+  "jsonm" {>= "1.0.2"}
+  "swhid_core" {>= "0.1"}
   "patch" {>= "3.0.0"}
-  "uutf"
+  "uutf" {>= "1.0.3"}
   (("host-system-mingw" {os = "win32" & os-distribution != "cygwinports"} &
     "conf-mingw-w64-gcc-i686" {os = "win32" & os-distribution != "cygwinports"} &
     "conf-mingw-w64-gcc-x86_64" {os = "win32" & os-distribution != "cygwinports"}) |
