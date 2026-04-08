@@ -90,6 +90,7 @@ users)
   * Update the download-if-missing patch to 3.1.0 [#6772 @kit-ty-kate]
   * Harden the Makefile's inline shell scripts [#6751 @kit-ty-kate]
   * Add lower-bounds constraints to the dependencies that have none (`ocamlgraph` >= 1.8.8, `jsonm` >= 1.0.2, `swhid_core` >= 0.1, `uutf` >= 1.0.3) [#6878 @kit-ty-kate]
+  * Require `spdx_licenses` >= 1.4.0 to ensure compatibility with SPDX v3 syntax [#6878 @kit-ty-kate]
 
 ## Infrastructure
 
