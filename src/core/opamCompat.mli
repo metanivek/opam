@@ -57,27 +57,13 @@ module Unix : sig
   val realpath: string -> string
 end
 
-module Filename: sig
-  (** NOTE: OCaml >= 4.10 *)
-
-  val quote_command :
-    string -> ?stdin:string -> ?stdout:string -> ?stderr:string
-    -> string list -> string
-end
-
 module List : sig
-  (** NOTE: OCaml >= 4.11 *)
-  val fold_left_map : ('acc -> 'a -> 'acc * 'b) -> 'acc -> 'a list -> 'acc * 'b list
-
   (** NOTE: OCaml >= 4.12 *)
   val equal : ('a -> 'a -> bool) -> 'a list -> 'a list -> bool
 end
 
 module type MAP = sig
   include Stdlib.Map.S
-
-  (** NOTE: OCaml >= 4.11 *)
-  val filter_map: (key -> 'a -> 'b option) -> 'a t -> 'b t
 
   (** NOTE: OCaml >= 5.1 *)
   val add_to_list: key -> 'a -> 'a list t -> 'a list t

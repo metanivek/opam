@@ -1198,7 +1198,7 @@ module OpamSys = struct
           Env.cyg_env ~env:(Env.raw_env ()) ~cygbin:(Filename.dirname cygcheck)
             ~git_location:None
         in
-        let cmd = OpamCompat.Filename.quote_command cygcheck [name] in
+        let cmd = Filename.quote_command cygcheck [name] in
         let ((c, _, _) as process) = Unix.open_process_full cmd env in
         let rec check_dll platform =
           match input_line c with

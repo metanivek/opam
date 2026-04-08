@@ -14,7 +14,7 @@ AS_IF([ test -x bootstrap/ocaml/bin/ocamlc -o -x bootstrap/ocaml/bin/ocamlopt ],
   export PATH="$PATH_PREPEND$PATH"
 ])
 
-MIN_OCAML_VERSION=4.08.0
+MIN_OCAML_VERSION=4.11.0
 
 AC_PROG_OCAML
 AC_CHECK_OCAML_OS_TYPE

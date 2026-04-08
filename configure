@@ -2478,7 +2478,7 @@ then :
 
 fi
 
-MIN_OCAML_VERSION=4.08.0
+MIN_OCAML_VERSION=4.11.0
 
   # checking for ocamlc
   if test -n "$ac_tool_prefix"; then
