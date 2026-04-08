@@ -33,7 +33,6 @@ depends: [
   "opam-solver" {= version}
   "base64" {>= "3.1.0"}
   "opam-repository" {= version}
-  "re" {>= "1.10.0"}
   "dune" {>= "2.8.0"}
 ]
 conflicts: [
