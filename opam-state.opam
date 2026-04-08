@@ -29,8 +29,8 @@ build: [
 ]
 depends: [
   "ocaml" {>= "4.08.0"}
+  "dune" {>= "2.8.0"}
   "opam-repository" {= version}
   "spdx_licenses" {>= "1.4.0"}
   "patch" {>= "3.0.0"}
-  "dune" {>= "2.8.0"}
 ]

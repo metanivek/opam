@@ -23,10 +23,10 @@ homepage: "https://opam.ocaml.org"
 bug-reports: "https://github.com/ocaml/opam/issues"
 depends: [
   "ocaml" {>= "4.08.0"}
+  "dune" {>= "2.8.0"}
   "base-unix"
   "ocamlgraph" {>= "1.8.8"}
   "re" {>= "1.10.0"}
-  "dune" {>= "2.8.0"}
   "sha" {>= "1.13"}
   "jsonm" {>= "1.0.2"}
   "swhid_core" {>= "0.1"}
