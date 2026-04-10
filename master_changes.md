@@ -76,6 +76,7 @@ users)
 ## External dependencies
   * Restore the distribution detection on Gentoo [#6886 @kit-ty-kate - fix #6887]
   * Add support for single-quoted values of the /etc/os-release file [#6886 @kit-ty-kate - fix #6887]
+  * Fix a string injection from the depexts field to nix-build, when `os-family=nixos` [#6894 @RyanGibb]
 
 ## Format upgrade
   * Fix switch and repo format upgrade on Windows. A block occurred because the global lock fd was reopened instead of using the one already opened.  [#6839 @rjbou]
