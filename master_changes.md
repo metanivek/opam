@@ -133,6 +133,7 @@ users)
   * Improve cache-loading performance when using OCaml >= 5.4 by using `Gc.ramp_up` [#6515 @dra27]
   * Make OpamStd.String.compare_case allocation free [#6515 @dra27]
   * Add a helper script to help generate the configure file on platforms without autoconf 2.71 [#6878 @kit-ty-kate]
+  * Fix a rare potential GC corruption in `OpamStubs.uname` [#6880 @avsm @kit-ty-kate @andrew]
 
 ## Internal: Unix
 
