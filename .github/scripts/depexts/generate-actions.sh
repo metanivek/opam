@@ -129,7 +129,7 @@ EOF
     ;;
 esac
 
-OCAML_INVARIANT="\"ocaml\" {>= \"4.09.0\"$OCAML_CONSTRAINT}"
+OCAML_INVARIANT="\"ocaml\" {>= \"4.11.0\"$OCAML_CONSTRAINT}"
 
 # Copy released opam binary from cache
 cp binary/opam "$dir/opam"

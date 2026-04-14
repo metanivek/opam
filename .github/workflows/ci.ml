@@ -18,7 +18,7 @@ let latest_ocaml5 = "5.4.0" (* Add this number to ocamls below when the next ver
 let trunk = "trunk"
 let ocamls = [
   (* Fully supported versions *)
-  "4.08.1"; "4.09.1"; "4.10.2"; "4.11.2"; "4.12.1"; "4.13.1";
+  "4.11.2"; "4.12.1"; "4.13.1";
   "5.0.0"; "5.1.1"; "5.2.1"; "5.3.0";
 
   (* Optionally supported versions *)

@@ -28,7 +28,7 @@ build: [
   [make "%{name}%.install"]
 ]
 depends: [
-  "ocaml" {>= "4.08.0"}
+  "ocaml" {>= "4.11.0"}
   "dune" {>= "2.8.0"}
   "opam-client" {= version}
   "conf-openssl" {with-test}

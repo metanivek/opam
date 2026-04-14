@@ -91,6 +91,7 @@ users)
   * Harden the Makefile's inline shell scripts [#6751 @kit-ty-kate]
   * Add lower-bounds constraints to the dependencies that have none (`ocamlgraph` >= 1.8.8, `jsonm` >= 1.0.2, `swhid_core` >= 0.1, `uutf` >= 1.0.3) [#6878 @kit-ty-kate]
   * Require `spdx_licenses` >= 1.4.0 to ensure compatibility with SPDX v3 syntax [#6878 @kit-ty-kate]
+  * Remove support for building opam with OCaml 4.08, 4.09 and 4.10 [#6879 @kit-ty-kate]
 
 ## Infrastructure
 
@@ -221,6 +222,9 @@ users)
   * `OpamCompat.Int.min`: was added [#6515 @kit-ty-kate]
   * `OpamStd.String.compare_case`: is now allocation free [#6515 @dra27]
   * `OpamVersionCompare.{compare,equal}`: are now allocation free [#6515 @dra27]
+  * `OpamCompat.Filename`: was removed [#6879 @kit-ty-kate]
+  * `OpamCompat.List.fold_left_map`: was removed [#6879 @kit-ty-kate]
+  * `OpamCompat.MAP.filter_map`: was removed [#6879 @kit-ty-kate]
   * `OpamCompat.Map.add_to_list`: was added [#6818 @dra27]
   * `OpamSystem`: add `is_dir_read_only` [#6489 @rjbou]
   * `OpamFilename`: add `is_dir_read_only` [#6489 @rjbou]
