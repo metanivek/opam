@@ -22,8 +22,9 @@ CAMLprim value opam_stdout_ws_col(value _unit) {
 #include <sys/utsname.h>
 
 CAMLprim value opam_uname(value _unit) {
+  CAMLparam0();
+  CAMLlocal1(ret);
   struct utsname buf;
-  value ret;
 
   if (-1 == uname(&buf)) {
     caml_uerror("uname", Nothing);
@@ -33,5 +34,5 @@ CAMLprim value opam_uname(value _unit) {
   Store_field(ret, 1, caml_copy_string(buf.release));
   Store_field(ret, 2, caml_copy_string(buf.machine));
 
-  return ret;
+  CAMLreturn(ret);
 }
