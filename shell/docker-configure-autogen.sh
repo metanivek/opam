@@ -1,5 +1,7 @@
 #!/bin/sh
-
+# Helpers to regenerate 'configure' with the good version of autoconf
+# make sure to have committed your changes in 'configure.ac' before launching it
+# Does not work on worktrees
 set -euo pipefail
 
 dockerfile=$(mktemp)
