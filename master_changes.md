@@ -160,6 +160,7 @@ users)
   * Bump the `actions/checkout` to version 6 [#6811 @kit-ty-kate]
   * Bump `actions/cache` to version 5 [#6835 @kit-ty-kate]
   * Regenerate the cache when `OPAM_TEST_REPO_SHA` is changed [#6832 #6821 @kit-ty-kate]
+  * Trigger the depexts CI when OpamSysPoll is modified [#6886 @kit-ty-kate]
 
 ## Doc
   * Add spacing between two words in `--locked` man section [#6806 @yosefAlsuhaibani]
