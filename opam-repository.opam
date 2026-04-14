@@ -29,7 +29,7 @@ build: [
 ]
 depends: [
   "ocaml" {>= "4.08.0"}
+  "dune" {>= "2.8.0"}
   "opam-format" {= version}
   "patch" {>= "3.0.0"}
-  "dune" {>= "2.8.0"}
 ]

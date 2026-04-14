@@ -384,20 +384,20 @@ echo
 
 # Dependencies
 AC_CHECK_OCAML_PKG([unix])
-AC_CHECK_OCAML_PKG_AT_LEAST([re], [1.9.0])
+AC_CHECK_OCAML_PKG_AT_LEAST([re], [1.10.0])
 AC_CHECK_OCAML_PKG_AT_LEAST([base64], [3.1.0])
-AC_CHECK_OCAML_PKG([ocamlgraph])
+AC_CHECK_OCAML_PKG_AT_LEAST([ocamlgraph], [1.8.8])
 AC_CHECK_OCAML_PKG_AT_LEAST([cudf], [0.7])
 AC_CHECK_OCAML_PKG_AT_LEAST([dose3.common], [6.1])
 AC_CHECK_OCAML_PKG_AT_LEAST([dose3.algo], [6.1])
 AC_CHECK_OCAML_PKG_AT_LEAST([opam-file-format], [2.1.4])
-AC_CHECK_OCAML_PKG([spdx_licenses])
+AC_CHECK_OCAML_PKG_AT_LEAST([spdx_licenses], [1.4.0])
 AC_CHECK_OCAML_PKG_AT_LEAST([opam-0install-cudf],[0.5.0])
-AC_CHECK_OCAML_PKG([jsonm])
-AC_CHECK_OCAML_PKG([uutf])
-AC_CHECK_OCAML_PKG([sha])
-AC_CHECK_OCAML_PKG([swhid_core])
-AC_CHECK_OCAML_PKG([patch])
+AC_CHECK_OCAML_PKG_AT_LEAST([jsonm], [1.0.2])
+AC_CHECK_OCAML_PKG_AT_LEAST([uutf], [1.0.3])
+AC_CHECK_OCAML_PKG_AT_LEAST([sha], [1.13])
+AC_CHECK_OCAML_PKG_AT_LEAST([swhid_core], [0.1])
+AC_CHECK_OCAML_PKG_AT_LEAST([patch], [3.0.0])
 
 # Optional dependencies
 AC_CHECK_OCAML_PKG_AT_LEAST([mccs],[1.1+17])

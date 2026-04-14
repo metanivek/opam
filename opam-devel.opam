@@ -29,8 +29,8 @@ build: [
 ]
 depends: [
   "ocaml" {>= "4.08.0"}
-  "opam-client" {= version}
   "dune" {>= "2.8.0"}
+  "opam-client" {= version}
   "conf-openssl" {with-test}
   "conf-diffutils" {with-test}
 ]

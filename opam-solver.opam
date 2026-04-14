@@ -29,12 +29,11 @@ build: [
 ]
 depends: [
   "ocaml" {>= "4.08.0"}
+  "dune" {>= "2.8.0"}
   "opam-format" {= version}
   "mccs" {>= "1.1+17"}
   "dose3" {>= "6.1"}
   "cudf" {>= "0.7"}
-  "re" {>= "1.9.0"}
-  "dune" {>= "2.8.0"}
   "opam-0install-cudf" {>= "0.5.0"}
 ]
 depopts: [
