@@ -209,6 +209,7 @@ users)
   * `OpamFile.URL.of_legacy`: was added [#6827 @kit-ty-kate]
   * `OpamSysPkg`: add `availability_mode` type to indicate the availability of system packages on a given system [#6489 @arozovyk]
   * `OpamSysPkg`: add `equal_availability_mode` function [#6489 @arozovyk]
+  * `OpamTypes`: change `result` type name to `solver_result` to avoid conflicts with Stdlib [#6885 @rjbou]
 
 ## opam-core
   * `OpamCmdliner` was added. It is accessible through a new `opam-core.cmdliner` sub-library [#6755 @kit-ty-kate]

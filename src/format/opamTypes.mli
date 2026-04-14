@@ -277,7 +277,7 @@ type solution_result =
   | Partial_error of actions_result
 
 (** Solver result *)
-type ('a, 'b) result =
+type ('a, 'b) solver_result =
   | Success of 'a
   | Conflicts of 'b
 
