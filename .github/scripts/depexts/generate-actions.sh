@@ -238,7 +238,8 @@ if [ "$target" = debian ] || [ "$target" = ubuntu ]; then
 fi
 
 if [ "$target" = alpine ]; then
- test_depext conf-clang-format.1
+ test_depext conf-fts.1
+ # conf-clang-format.1
  # conf-pandoc.0.1
 fi
 
