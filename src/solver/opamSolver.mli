@@ -90,7 +90,7 @@ val request:
     consistency of the initial description. *)
 val resolve :
   universe -> atom request
-  -> (solution, OpamCudf.conflict) result
+  -> (solution, OpamCudf.conflict) solver_result
 
 (** Returns the graph of atomic actions (rm, inst) from a solution *)
 val get_atomic_action_graph : solution -> ActionGraph.t
