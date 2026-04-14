@@ -74,6 +74,8 @@ users)
   * The `url` file now only supports the legacy opam 1.2 fields [#6827 @kit-ty-kate]
 
 ## External dependencies
+  * Restore the distribution detection on Gentoo [#6886 @kit-ty-kate - fix #6887]
+  * Add support for single-quoted values of the /etc/os-release file [#6886 @kit-ty-kate - fix #6887]
 
 ## Format upgrade
   * Fix switch and repo format upgrade on Windows. A block occurred because the global lock fd was reopened instead of using the one already opened.  [#6839 @rjbou]
@@ -162,6 +164,7 @@ users)
   * Bump the `actions/checkout` to version 6 [#6811 @kit-ty-kate]
   * Bump `actions/cache` to version 5 [#6835 @kit-ty-kate]
   * Regenerate the cache when `OPAM_TEST_REPO_SHA` is changed [#6832 #6821 @kit-ty-kate]
+  * Trigger the depexts CI when OpamSysPoll is modified [#6886 @kit-ty-kate]
 
 ## Doc
   * Add spacing between two words in `--locked` man section [#6806 @yosefAlsuhaibani]

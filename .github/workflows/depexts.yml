@@ -5,6 +5,7 @@ on:
     paths:
       - '*.opam'
       - 'src/state/opamSysInteract.ml'
+      - 'src/state/opamSysPoll.ml'
       - '.github/workflows/depexts.yml'
       - '.github/scripts/depexts/**'
   push:
