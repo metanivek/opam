@@ -93,6 +93,8 @@ let os_release_field =
           Scanf.sscanf s "%s@= %s" (fun x v ->
               let contents =
                 try Scanf.sscanf v "\"%s@\"" (fun s -> s)
+                with Scanf.Scan_failure _ | End_of_file ->
+                try Scanf.sscanf v "'%s@'" (fun s -> s)
                 with Scanf.Scan_failure _ | End_of_file -> v
               in
               Some (x, contents))
