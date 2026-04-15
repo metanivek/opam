@@ -236,3 +236,4 @@ users)
   * `OpamCompat.Map.add_to_list`: was added [#6818 @dra27]
   * `OpamSystem`: add `is_dir_read_only` [#6489 @rjbou]
   * `OpamFilename`: add `is_dir_read_only` [#6489 @rjbou]
+  * `OpamFilename.might_escape`: ensure / is detected as a file separator when called with `~sep:Unspecified` on Windows [#6897 @kit-ty-kate]
