@@ -359,3 +359,118 @@ OPAM/rem-dir/lib
 OPAM/rem-dir/lib/shared
 OPAM/rem-dir/lib/stublibs
 OPAM/rem-dir/lib/toplevel
+### OPAMDEBUG=0
+### unset OPAMDEBUGSECTIONS
+### : Escapability
+### <pkg:eskape.1>
+opam-version: "2.0"
+install: [ "echo" "hellow" ]
+### <pkg:eskape.1:eskape.install>
+lib: [
+  "a-file"  { "../../a-file" }
+  "fichier" { "/ab/so/lute/path/fichier" }
+  "dosiero" { "/tmp/../middle/dosiero" }
+  "good"    { "good" }
+  ]
+bin: [
+  "a-file"  { "../../a-file" }
+  "fichier" { "/ab/so/lute/path/fichier" }
+  "dosiero" { "/tmp/../middle/dosiero" }
+  "good"    { "good" }
+  ]
+etc: [
+  "a-file"  { "../../a-file" }
+  "fichier" { "/ab/so/lute/path/fichier" }
+  "dosiero" { "/tmp/../middle/dosiero" }
+  "good"    { "good" }
+  ]
+share: [
+  "a-file"  { "../../a-file" }
+  "fichier" { "/ab/so/lute/path/fichier" }
+  "dosiero" { "/tmp/../middle/dosiero" }
+  "good"    { "good" }
+  ]
+misc: [
+  "a-file"  { "../../a-file" }
+  "fichier" { "/ab/so/lute/path/fichier" }
+  "dosiero" { "/tmp/../middle/dosiero" }
+  "good"    { "good" }
+  ]
+### <pkg:eskape.1:a-file>
+hellow
+### <pkg:eskape.1:fichier>
+bonjour
+### <pkg:eskape.1:dosiero>
+saluton
+### <pkg:eskape.1:good>
+hallo
+### opam update
+
+<><> Updating package repositories ><><><><><><><><><><><><><><><><><><><><><><>
+[default] no changes from file://${BASEDIR}/REPO
+### opam switch create escapability --empty
+### OPAMDEBUGSECTIONS="SYSTEM" OPAMDEBUG=-5
+### opam install eskape
+FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
+SYSTEM                          LOCK ${BASEDIR}/OPAM/lock (none => read)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-magicv.cache (none => read)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-magicv.cache (read => none)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/lock (none => write)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (none => read)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (read => none)
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/backup
+The following actions will be performed:
+=== install 1 package
+  - install eskape 1
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+SYSTEM                          rmdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/eskape.install
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/eskape.install
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/a-file
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/a-file
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/fichier
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/fichier
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/dosiero
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/dosiero
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/good
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/good
+[WARNING] Errors in ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/eskape.install, some fields have been ignored:
+            - At ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/eskape.install:2:14-2:28::
+              ../../a-file references its parent directory.
+            - At ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/eskape.install:8:14-8:28::
+              ../../a-file references its parent directory.
+            - At ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/eskape.install:26:14-26:28::
+              ../../a-file is not an absolute filename.
+            - At ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/eskape.install:20:14-20:28::
+              ../../a-file references its parent directory.
+            - At ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/eskape.install:14:14-14:28::
+              ../../a-file references its parent directory.
+
+-> installed eskape.1
+SYSTEM                          rm ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/eskape.install
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files/eskape.install
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/a-file
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files/a-file
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/fichier
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files/fichier
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/dosiero
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files/dosiero
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/good
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files/good
+SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (none => write)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (write => none)
+Done.
+SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/lock (write => none)
+SYSTEM                          rm ${BASEDIR}/OPAM/escapability/.opam-switch/backup/state-today.export
+SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/lock (none => none)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/config.lock (none => none)
+### ocaml cat.ml escapability eskape
+==> eskape installed file
+Not found: ${BASEDIR}/OPAM/escapability/share/eskape/a-file
+==> eskape changes
+opam-version: "2.0"
