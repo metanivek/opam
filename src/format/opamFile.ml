@@ -3824,8 +3824,15 @@ module Dot_installSyntax = struct
       Pp.V.map_list ~depth:1 @@ Pp.V.map_option
         (Pp.V.string -| pp_optional)
         (Pp.opt @@
-         Pp.singleton -| Pp.V.string -|
-         Pp.of_module "rel-filename" (module OpamFilename.Base))
+         Pp.singleton -| Pp.V.string -| Pp.pp ~name:"rel-filename"
+           (fun ~pos s ->
+              if OpamFilename.might_escape ~sep:`Unspecified s then
+                Pp.bad_format ~pos "%s references its parent directory." s
+              else if Filename.is_relative s then
+                OpamFilename.Base.of_string s
+              else
+                Pp.bad_format ~pos "%s is an absolute filename." s)
+           OpamFilename.Base.to_string)
     in
     let pp_misc =
       Pp.V.map_list ~depth:1 @@ Pp.V.map_option
