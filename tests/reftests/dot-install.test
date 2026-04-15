@@ -359,3 +359,204 @@ OPAM/rem-dir/lib
 OPAM/rem-dir/lib/shared
 OPAM/rem-dir/lib/stublibs
 OPAM/rem-dir/lib/toplevel
+### OPAMDEBUG=0
+### unset OPAMDEBUGSECTIONS
+### : Escapability
+### <pkg:eskape.1>
+opam-version: "2.0"
+install: [ "echo" "hellow" ]
+### <pkg:eskape.1:eskape.install>
+lib: [
+  "a-file"  { "../../a-file" }
+  "fichier" { "/ab/so/lute/path/fichier" }
+  "dosiero" { "/tmp/../middle/dosiero" }
+  "good"    { "good" }
+  ]
+bin: [
+  "a-file"  { "../../a-file" }
+  "fichier" { "/ab/so/lute/path/fichier" }
+  "dosiero" { "/tmp/../middle/dosiero" }
+  "good"    { "good" }
+  ]
+etc: [
+  "a-file"  { "../../a-file" }
+  "fichier" { "/ab/so/lute/path/fichier" }
+  "dosiero" { "/tmp/../middle/dosiero" }
+  "good"    { "good" }
+  ]
+share: [
+  "a-file"  { "../../a-file" }
+  "fichier" { "/ab/so/lute/path/fichier" }
+  "dosiero" { "/tmp/../middle/dosiero" }
+  "good"    { "good" }
+  ]
+misc: [
+  "a-file"  { "../../a-file" }
+  "fichier" { "/ab/so/lute/path/fichier" }
+  "dosiero" { "/tmp/../middle/dosiero" }
+  "good"    { "good" }
+  ]
+### <pkg:eskape.1:a-file>
+hellow
+### <pkg:eskape.1:fichier>
+bonjour
+### <pkg:eskape.1:dosiero>
+saluton
+### <pkg:eskape.1:good>
+hallo
+### opam update
+
+<><> Updating package repositories ><><><><><><><><><><><><><><><><><><><><><><>
+[default] no changes from file://${BASEDIR}/REPO
+### opam switch create escapability --empty
+### OPAMDEBUGSECTIONS="SYSTEM" OPAMDEBUG=-5
+### opam install eskape
+FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
+SYSTEM                          LOCK ${BASEDIR}/OPAM/lock (none => read)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-magicv.cache (none => read)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-magicv.cache (read => none)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/lock (none => write)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (none => read)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (read => none)
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/backup
+The following actions will be performed:
+=== install 1 package
+  - install eskape 1
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+SYSTEM                          rmdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/eskape.install
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/eskape.install
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/a-file
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/a-file
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/fichier
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/fichier
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/dosiero
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/dosiero
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/good
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/good
+[WARNING] Errors in ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/eskape.install, some fields have been ignored:
+            - At ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/eskape.install:26:14-26:28::
+              ../../a-file is not an absolute filename.
+
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/a-file -> ${BASEDIR}/OPAM/escapability/bin/../../a-file (755)
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/bin/ab
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/bin/ab/so
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/bin/ab/so/lute
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/bin/ab/so/lute/path
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/fichier -> ${BASEDIR}/OPAM/escapability/bin/ab/so/lute/path/fichier (755)
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/bin/tmp
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/bin/tmp/..
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/bin/tmp/../middle
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/dosiero -> ${BASEDIR}/OPAM/escapability/bin/tmp/../middle/dosiero (755)
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/good -> ${BASEDIR}/OPAM/escapability/bin/good (755)
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/lib/eskape
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/a-file -> ${BASEDIR}/OPAM/escapability/lib/eskape/../../a-file (644)
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/lib/eskape/ab
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/lib/eskape/ab/so
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/lib/eskape/ab/so/lute
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/lib/eskape/ab/so/lute/path
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/fichier -> ${BASEDIR}/OPAM/escapability/lib/eskape/ab/so/lute/path/fichier (644)
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/lib/eskape/tmp
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/lib/eskape/tmp/..
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/lib/eskape/tmp/../middle
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/dosiero -> ${BASEDIR}/OPAM/escapability/lib/eskape/tmp/../middle/dosiero (644)
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/good -> ${BASEDIR}/OPAM/escapability/lib/eskape/good (644)
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/share
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/share/eskape
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/a-file -> ${BASEDIR}/OPAM/escapability/share/eskape/../../a-file (644)
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/share/eskape/ab
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/share/eskape/ab/so
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/share/eskape/ab/so/lute
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/share/eskape/ab/so/lute/path
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/fichier -> ${BASEDIR}/OPAM/escapability/share/eskape/ab/so/lute/path/fichier (644)
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/share/eskape/tmp
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/share/eskape/tmp/..
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/share/eskape/tmp/../middle
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/dosiero -> ${BASEDIR}/OPAM/escapability/share/eskape/tmp/../middle/dosiero (644)
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/good -> ${BASEDIR}/OPAM/escapability/share/eskape/good (644)
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/etc
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/etc/eskape
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/a-file -> ${BASEDIR}/OPAM/escapability/etc/eskape/../../a-file (644)
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/etc/eskape/ab
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/etc/eskape/ab/so
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/etc/eskape/ab/so/lute
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/etc/eskape/ab/so/lute/path
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/fichier -> ${BASEDIR}/OPAM/escapability/etc/eskape/ab/so/lute/path/fichier (644)
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/etc/eskape/tmp
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/etc/eskape/tmp/..
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/etc/eskape/tmp/../middle
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/dosiero -> ${BASEDIR}/OPAM/escapability/etc/eskape/tmp/../middle/dosiero (644)
+SYSTEM                          install ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/good -> ${BASEDIR}/OPAM/escapability/etc/eskape/good (644)
+-> installed eskape.1
+SYSTEM                          rm ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1
+SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/eskape.install
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files/eskape.install
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/a-file
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files/a-file
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/fichier
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files/fichier
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/dosiero
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files/dosiero
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/good
+SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files/good
+SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (none => write)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (write => none)
+Done.
+SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/lock (write => none)
+SYSTEM                          rm ${BASEDIR}/OPAM/escapability/.opam-switch/backup/state-today.export
+SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/lock (none => none)
+SYSTEM                          LOCK ${BASEDIR}/OPAM/config.lock (none => none)
+### ocaml cat.ml escapability eskape
+==> eskape installed file
+Not found: ${BASEDIR}/OPAM/escapability/share/eskape/a-file
+==> eskape changes
+opam-version: "2.0"
+added: [
+  "a-file" {"F:12fc204edeae5b57713c5ad7dcb97d39"}
+  "bin|ab" {"D"}
+  "bin|ab|so" {"D"}
+  "bin|ab|so|lute" {"D"}
+  "bin|ab|so|lute|path" {"D"}
+  "bin|ab|so|lute|path|fichier" {"F:94baaad4d1347ec6e15ae35c88ee8bc8"}
+  "bin|good" {"F:aee97cb3ad288ef0add6c6b5b5fae48a"}
+  "bin|middle" {"D"}
+  "bin|middle|dosiero" {"F:9ae3259b39b4149f6bac18625528355a"}
+  "bin|tmp" {"D"}
+  "etc" {"D"}
+  "etc|eskape" {"D"}
+  "etc|eskape|ab" {"D"}
+  "etc|eskape|ab|so" {"D"}
+  "etc|eskape|ab|so|lute" {"D"}
+  "etc|eskape|ab|so|lute|path" {"D"}
+  "etc|eskape|ab|so|lute|path|fichier" {"F:94baaad4d1347ec6e15ae35c88ee8bc8"}
+  "etc|eskape|good" {"F:aee97cb3ad288ef0add6c6b5b5fae48a"}
+  "etc|eskape|middle" {"D"}
+  "etc|eskape|middle|dosiero" {"F:9ae3259b39b4149f6bac18625528355a"}
+  "etc|eskape|tmp" {"D"}
+  "lib|eskape" {"D"}
+  "lib|eskape|ab" {"D"}
+  "lib|eskape|ab|so" {"D"}
+  "lib|eskape|ab|so|lute" {"D"}
+  "lib|eskape|ab|so|lute|path" {"D"}
+  "lib|eskape|ab|so|lute|path|fichier" {"F:94baaad4d1347ec6e15ae35c88ee8bc8"}
+  "lib|eskape|good" {"F:aee97cb3ad288ef0add6c6b5b5fae48a"}
+  "lib|eskape|middle" {"D"}
+  "lib|eskape|middle|dosiero" {"F:9ae3259b39b4149f6bac18625528355a"}
+  "lib|eskape|tmp" {"D"}
+  "share" {"D"}
+  "share|eskape" {"D"}
+  "share|eskape|ab" {"D"}
+  "share|eskape|ab|so" {"D"}
+  "share|eskape|ab|so|lute" {"D"}
+  "share|eskape|ab|so|lute|path" {"D"}
+  "share|eskape|ab|so|lute|path|fichier"
+    {"F:94baaad4d1347ec6e15ae35c88ee8bc8"}
+  "share|eskape|good" {"F:aee97cb3ad288ef0add6c6b5b5fae48a"}
+  "share|eskape|middle" {"D"}
+  "share|eskape|middle|dosiero" {"F:9ae3259b39b4149f6bac18625528355a"}
+  "share|eskape|tmp" {"D"}
+]
