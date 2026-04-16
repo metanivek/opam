@@ -50,7 +50,7 @@ EOF
    # CentOS 7 doesn't support OCaml 5 (GCC is too old)
    OCAML_CONSTRAINT=' & < "5.0"'
     cat > "$dir/Dockerfile" << EOF
-FROM almalinux:9.4
+FROM almalinux
 RUN dnf install 'dnf-command(config-manager)' -y
 RUN dnf config-manager --set-enabled crb
 RUN yum install -y $mainlibs $ocaml
@@ -68,7 +68,7 @@ EOF
     ;;
   fedora)
   cat > "$dir/Dockerfile" << EOF
-FROM fedora:43
+FROM fedora
 RUN dnf install -y $mainlibs $ocaml diffutils
 RUN dnf install -y gcc-c++
 EOF
@@ -92,14 +92,14 @@ EOF
   opensuse)
   # glpk-dev is installed manually because os-family doesn't handle tumbleweed
     cat > "$dir/Dockerfile" << EOF
-FROM opensuse/leap:15.3
+FROM opensuse/leap
 RUN zypper --non-interactive install $mainlibs $ocaml diffutils gzip glpk-devel
 RUN zypper --non-interactive install gcc-c++
 EOF
     ;;
   oraclelinux)
     cat > "$dir/Dockerfile" << EOF
-FROM oraclelinux:8
+FROM oraclelinux:10
 RUN yum install -y $mainlibs
 RUN yum install -y gcc-c++
 EOF
@@ -121,7 +121,7 @@ EOF
     ;;
   ubuntu)
   cat > "$dir/Dockerfile" << EOF
-FROM ubuntu:20.04
+FROM ubuntu
 RUN apt update
 RUN apt install -y $mainlibs $ocaml
 RUN apt install -y g++
