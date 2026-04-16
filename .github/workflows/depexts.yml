@@ -18,7 +18,7 @@ defaults:
     shell: bash
 
 env:
-  OPAMVERSION: 2.5.0
+  OPAMVERSION: 2.5.1
   OPAM_REPO: https://github.com/ocaml/opam-repository.git
   OPAM_REPO_SHA: eb45f7ec868b0ffc828b9d59cccc72cfec100333
 
