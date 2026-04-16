@@ -172,6 +172,7 @@ users)
   * Trigger the depexts CI when OpamSysPoll is modified [#6886 @kit-ty-kate]
   * Speedup macOS builds by stopping testing alternative solvers on macOS [#6889 @kit-ty-kate]
   * Disable testing conf-clang-format in favour of conf-fts on Alpine [#6888 @kit-ty-kate]
+  * Upgrade to use opam 2.5.1 [#6904 @kit-ty-kate]
 
 ## Doc
   * Add spacing between two words in `--locked` man section [#6806 @yosefAlsuhaibani]
