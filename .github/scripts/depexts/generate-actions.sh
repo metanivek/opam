@@ -21,8 +21,6 @@ EOF
 mainlibs="m4 git rsync tar unzip bzip2 make wget"
 ocaml="ocaml ocaml-compiler-libs"
 
-OCAML_CONSTRAINT=''
-
 case "$target" in
   alpine)
     cat > "$dir/Dockerfile" << EOF
@@ -47,8 +45,6 @@ RUN pacman -Syu --noconfirm $mainlibs $ocaml gcc diffutils
 EOF
     ;;
  centos)
-   # CentOS 7 doesn't support OCaml 5 (GCC is too old)
-   OCAML_CONSTRAINT=' & < "5.0"'
     cat > "$dir/Dockerfile" << EOF
 FROM almalinux
 RUN dnf install 'dnf-command(config-manager)' -y
@@ -86,21 +82,22 @@ FROM gentoo/stage3
 COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 RUN getuto
 RUN echo 'FEATURES="getbinpkg"' >> /etc/portage/make.conf
-RUN emerge -qv $mainlibs
+RUN emerge -qv $mainlibs dev-lang/ocaml
 EOF
     ;;
   opensuse)
   # glpk-dev is installed manually because os-family doesn't handle tumbleweed
     cat > "$dir/Dockerfile" << EOF
 FROM opensuse/leap
-RUN zypper --non-interactive install $mainlibs $ocaml diffutils gzip glpk-devel
+RUN zypper --non-interactive install $mainlibs ocaml ocaml-compiler-libs-devel diffutils gzip glpk-devel
 RUN zypper --non-interactive install gcc-c++
 EOF
     ;;
   oraclelinux)
     cat > "$dir/Dockerfile" << EOF
 FROM oraclelinux:10
-RUN yum install -y $mainlibs
+RUN dnf config-manager --set-enabled ol10_codeready_builder
+RUN yum install -y $mainlibs $ocaml
 RUN yum install -y gcc-c++
 EOF
   ;;
@@ -129,7 +126,7 @@ EOF
     ;;
 esac
 
-OCAML_INVARIANT="\"ocaml\" {>= \"4.11.0\"$OCAML_CONSTRAINT}"
+OCAML_INVARIANT='"ocaml-system"'
 
 # Copy released opam binary from cache
 cp binary/opam "$dir/opam"
