@@ -4,11 +4,11 @@ are not marked). Those prefixed with "(+)" are new command/option (since
 2.1.0~alpha2).
 
 2.5.1:
-* Invalidate .install fields containing destination filepath trying to escape their scope [#6897 @kit-ty-kate - report by @andrew]
+* OSEC-2026-03: Invalidate .install fields containing destination filepath trying to escape their scope [#6897 @kit-ty-kate - report by @andrew]
 * Fix a string injection from the depexts field to nix-build, when `os-family=nixos` [#6894 @RyanGibb]
 * Restore the distribution detection on Gentoo [#6886 @kit-ty-kate - fix #6887]
 * Add support for single-quoted values of the /etc/os-release file [#6886 @kit-ty-kate - fix #6887]
-* Fix rare potential GC corruptions [#6882 #6880 @kit-ty-kate - report by @andrew]
+* Fix rare potential GC corruptions [#6882 #6880 @kit-ty-kate @avsm - report by @andrew]
 * Improve and extend the testsuite [#6897 @rjbou @kit-ty-kate]
 * API changes in `opam-core`:
   * `OpamFilename.might_escape`: ensure / is detected as a file separator when called with `~sep:Unspecified` on Windows [#6897 @kit-ty-kate]
