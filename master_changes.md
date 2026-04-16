@@ -102,6 +102,7 @@ users)
   * Fix the placement of the vendored archives in the release tarball [#6765 @kit-ty-kate - fix #6762]
   * Fix the Windows build [#6769 @kit-ty-kate]
   * Harden the Makefile's inline shell scripts [#6751 @kit-ty-kate]
+  * Fix the release script not being a noop on re-runs [#6903 @kit-ty-kate]
 
 ## Install script
   * Add `2.5.1` to the installers [#6902 @rjbou]
