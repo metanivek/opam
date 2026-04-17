@@ -49,8 +49,8 @@ EOF
 FROM almalinux
 RUN dnf install 'dnf-command(config-manager)' -y
 RUN dnf config-manager --set-enabled crb
-RUN yum install -y $mainlibs $ocaml
-RUN yum install -y gcc-c++ diffutils
+RUN dnf install -y $mainlibs $ocaml
+RUN dnf install -y gcc-c++ diffutils
 RUN sed -i 's/ID="almalinux"/ID="centos"/' /etc/os-release
 EOF
     ;;
@@ -97,8 +97,8 @@ EOF
     cat > "$dir/Dockerfile" << EOF
 FROM oraclelinux:10
 RUN dnf config-manager --set-enabled ol10_codeready_builder
-RUN yum install -y $mainlibs $ocaml
-RUN yum install -y gcc-c++
+RUN dnf install -y $mainlibs $ocaml
+RUN dnf install -y gcc-c++
 EOF
   ;;
   nix)
