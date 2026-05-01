@@ -246,3 +246,4 @@ users)
   * `OpamSystem`: add `is_dir_read_only` [#6489 @rjbou]
   * `OpamFilename`: add `is_dir_read_only` [#6489 @rjbou]
   * `OpamFilename.might_escape`: ensure / is detected as a file separator when called with `~sep:Unspecified` on Windows [#6897 @kit-ty-kate]
+  * `OpamFilename.Unix` was added abstracting over `/` separated paths regardless of the current system [#6914 @rjbou @kit-ty-kate]
