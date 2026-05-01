@@ -703,3 +703,114 @@ let to_attribute root file =
     s.Unix.st_perm in
   let digest = OpamHash.compute ~kind:`MD5 (to_string file) in
   Attribute.create basename digest (Some perm)
+
+module Unix = struct
+  type filename = t
+
+  (* NOTE: OpamStd.AbstractString isn't used here to make sure the invariants
+     of the Unix module hold. Mainly: paths are separated by / not \. *)
+  module Internal = struct
+    type t = string
+
+    let compare = String.compare
+    let equal = String.equal
+
+    let of_string = OpamSystem.back_to_forward
+    let to_string = Fun.id
+
+    let to_json x = `String x
+    let of_json = function
+      | `String x -> Some (of_string x)
+      | _ -> None
+
+    module O = struct
+      type t = string
+      let to_string = to_string
+      let compare = compare
+      let to_json = to_json
+      let of_json = of_json
+    end
+    module Set = OpamStd.Set.Make(O)
+    module Map = OpamStd.Map.Make(O)
+  end
+
+  include Internal
+
+  module Base = struct
+    include Internal
+
+    let of_base = OpamSystem.back_to_forward
+    let to_base = Fun.id
+  end
+
+  module Dir = struct
+    include Internal
+
+    let of_dir = OpamSystem.back_to_forward
+    let to_dir = Fun.id
+  end
+
+  (* Copied from the OCaml Stdlib Filename module *)
+  (* Copyright 1996 Institut National de Recherche en Informatique et
+     en Automatique. *)
+  let current_dir_name = "."
+  let dir_sep = "/"
+  let is_dir_sep s i = s.[i] = '/'
+  let concat dirname filename =
+    let l = String.length dirname in
+    if l = 0 || is_dir_sep dirname (l-1)
+    then dirname ^ filename
+    else dirname ^ dir_sep ^ filename
+  (* This function implements the Open Group specification found here:
+     [[2]] http://pubs.opengroup.org/onlinepubs/9699919799/utilities/dirname.html
+     In step 6 of [[2]], we choose to process "//" normally.
+  *)
+  let generic_dirname is_dir_sep current_dir_name name =
+    let rec trailing_sep n =
+      if n < 0 then String.sub name 0 1
+      else if is_dir_sep name n then trailing_sep (n - 1)
+      else base n
+    and base n =
+      if n < 0 then current_dir_name
+      else if is_dir_sep name n then intermediate_sep n
+      else base (n - 1)
+    and intermediate_sep n =
+      if n < 0 then String.sub name 0 1
+      else if is_dir_sep name n then intermediate_sep (n - 1)
+      else String.sub name 0 (n + 1)
+    in
+    if name = ""
+    then current_dir_name
+    else trailing_sep (String.length name - 1)
+  let dirname = generic_dirname is_dir_sep current_dir_name
+  (* This function implements the Open Group specification found here:
+     [[1]] http://pubs.opengroup.org/onlinepubs/9699919799/utilities/basename.html
+     In step 1 of [[1]], we choose to return "." for empty input.
+      (for compatibility with previous versions of OCaml)
+     In step 2, we choose to process "//" normally.
+     Step 6 is not implemented: we consider that the [suffix] operand is
+      always absent.  Suffixes are handled by [chop_suffix] and [chop_extension].
+  *)
+  let generic_basename is_dir_sep current_dir_name name =
+    let rec find_end n =
+      if n < 0 then String.sub name 0 1
+      else if is_dir_sep name n then find_end (n - 1)
+      else find_beg n (n + 1)
+    and find_beg n p =
+      if n < 0 then String.sub name 0 p
+      else if is_dir_sep name n then String.sub name (n + 1) (p - n - 1)
+      else find_beg (n - 1) p
+    in
+    if name = ""
+    then current_dir_name
+    else find_end (String.length name - 1)
+  let basename = generic_basename is_dir_sep current_dir_name
+
+  module Op = struct
+    let (/) = concat
+    let (//) = concat
+  end
+
+  let of_filename x = OpamSystem.back_to_forward (concat x.dirname x.basename)
+  let to_filename x = {dirname = dirname x; basename = basename x}
+end

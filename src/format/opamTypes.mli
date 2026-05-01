@@ -36,6 +36,9 @@ type filename = OpamFilename.t
 
 type subpath = OpamFilename.SubPath.t
 
+type unix_filename = OpamFilename.Unix.t
+type unix_dirname = OpamFilename.Unix.Dir.t
+
 (** Set of files *)
 type filename_set = OpamFilename.Set.t
 

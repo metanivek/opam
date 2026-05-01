@@ -385,3 +385,45 @@ end
 
 (** Convert a filename to an attribute, relatively to a root *)
 val to_attribute: Dir.t -> t -> Attribute.t
+
+(** Unix type filenames.
+    '/' is always the separator regardless of the current system *)
+module Unix : sig
+  type filename = t
+
+  (** [of_string] will translate filesystem dir sep to slashes '/'. *)
+  include OpamStd.ABSTRACT
+
+  module Dir : sig
+    (** [of_string] will translate filesystem dir sep to slashes '/'. *)
+    include OpamStd.ABSTRACT
+
+    (** Convert dirname to a raw dirname.
+        Translates filesystem dir sep to slashes '/'. *)
+    val of_dir : Dir.t -> t
+
+    val to_dir : t -> Dir.t
+  end
+
+  module Base : sig
+    (** [of_string] will translate filesystem dir sep to slashes '/'. *)
+    include OpamStd.ABSTRACT
+
+    (** Convert basename to a raw basename.
+        Translates filesystem dir sep to slashes '/'. *)
+    val of_base : Base.t -> t
+
+    val to_base : t -> Base.t
+  end
+
+  module Op : sig
+    val (/): Dir.t -> string -> Dir.t
+    val (//): Dir.t -> string -> t
+  end
+
+  (** Convert filename to a raw filename.
+      Translates filesystem dir sep to slashes '/'. *)
+  val of_filename : filename -> t
+
+  val to_filename : t -> filename
+end
