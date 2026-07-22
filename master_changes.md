@@ -72,6 +72,7 @@ users)
 ## VCS
 
 ## Build
+  * Upgrade the autoconf generated files (`configure`) to autoconf 2.72 [#7052 @kit-ty-kate]
 
 ## Infrastructure
 
@@ -109,6 +110,7 @@ users)
 ### Engine
 
 ## Github Actions
+  * The Hygiene workflow has been upgraded to Ubuntu 26.04 [#7052 @kit-ty-kate]
 
 ## Doc
 

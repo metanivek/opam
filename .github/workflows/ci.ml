@@ -234,7 +234,7 @@ let install_sys_packages packages ~descr ?cond platforms =
         run ?cond descr commands
 
 let install_sys_opam ?cond = install_sys_packages ["opam"] ~descr:"Install system's opam package" ?cond
-let install_sys_dune ?cond = install_sys_packages ["dune"; "ocaml"] ~descr:"Install system's dune and ocaml packages" ?cond
+let install_sys_dune ?cond = install_sys_packages ["ocaml-dune"; "ocaml"] ~descr:"Install system's dune and ocaml packages" ?cond
 
 (* The clean way to do it is to have the changed file in their proper job and
    condition the other job to its output, but it will lead to extra steps
@@ -578,7 +578,7 @@ let main oc : unit =
   @@ fun _ -> doc_job ~analyse_job ~build_linux_job ~build_windows_job ~build_macOS_job ~section:"Compile doc" Linux
   @@ fun _ -> solvers_job ~analyse_job ~build_linux_job ~build_windows_job ~build_macOS_job ~section:"Compile solver backends" Linux
   @@ fun _ -> upgrade_job ~analyse_job ~build_linux_job ~build_windows_job ~build_macOS_job ~section:"Upgrade from 1.2 to current" Linux
-  @@ fun _ -> hygiene_job ~analyse_job (Specific (Linux, "22.04"))
+  @@ fun _ -> hygiene_job ~analyse_job (Specific (Linux, "26.04"))
   @@ fun _ -> depends_job ~analyse_job ~build_linux_job Linux
   @@ fun _ -> end_workflow
 
