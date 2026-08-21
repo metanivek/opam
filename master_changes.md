@@ -76,6 +76,7 @@ users)
 
 ## Release scripts
   * Harden the release script against known `sshpass` instability [#7096 @kit-ty-kate]
+  * Make the Windows binary reproducible [#7097 @kit-ty-kate - fix #6752]
 
 ## Install script
   * Add `2.6.0~beta1` [#7099 @kit-ty-kate]
