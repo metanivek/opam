@@ -23,6 +23,7 @@ users)
 ## Actions
 
 ## Install
+  * Fix a performance regression where opam project trees were scanned for nothing, when pinning them [#7101 @kit-ty-kate - fix #7098]
 
 ## Build (package)
 
@@ -108,6 +109,8 @@ users)
 
 ## Reftests
 ### Tests
+  * Add a new test showing opam's package format upgrade behaviours [#7101 @kit-ty-kate]
+  * Test the behaviour of `extra-files` when pinned from a local directory [#7101 @kit-ty-kate]
 
 ### Engine
 
