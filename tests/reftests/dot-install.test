@@ -257,6 +257,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/rem-dir/.opam-switch/lock (none => write)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/rem-dir/.opam-switch/packages/cache (none => read)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/rem-dir/.opam-switch/packages/cache (read => none)
+SYSTEM                          scan files in ${BASEDIR}/OPAM/rem-dir/.opam-switch/config
 SYSTEM                          mkdir ${BASEDIR}/OPAM/rem-dir/.opam-switch/backup
 The following actions will be performed:
 === install 1 package
@@ -265,6 +266,7 @@ The following actions will be performed:
 <><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 SYSTEM                          rmdir ${BASEDIR}/OPAM/rem-dir/.opam-switch/build/no-specified-dir.1
 SYSTEM                          mkdir ${BASEDIR}/OPAM/rem-dir/.opam-switch/build/no-specified-dir.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/no-specified-dir/no-specified-dir.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/no-specified-dir/no-specified-dir.1/files/no-specified-dir.install
 SYSTEM                          write ${BASEDIR}/OPAM/rem-dir/.opam-switch/build/no-specified-dir.1/no-specified-dir.install
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/no-specified-dir/no-specified-dir.1/files/a-file
@@ -281,6 +283,7 @@ TRACK                           after install: 9 elements, 7 added, scanned in 0
 -> installed no-specified-dir.1
 SYSTEM                          rm ${BASEDIR}/OPAM/rem-dir/.opam-switch/packages/cache
 SYSTEM                          mkdir ${BASEDIR}/OPAM/rem-dir/.opam-switch/packages/no-specified-dir.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/no-specified-dir/no-specified-dir.1/files
 SYSTEM                          mkdir ${BASEDIR}/OPAM/rem-dir/.opam-switch/packages/no-specified-dir.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/no-specified-dir/no-specified-dir.1/files/no-specified-dir.install
 SYSTEM                          write ${BASEDIR}/OPAM/rem-dir/.opam-switch/packages/no-specified-dir.1/files/no-specified-dir.install
@@ -316,6 +319,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/rem-dir/.opam-switch/lock (none => write)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/rem-dir/.opam-switch/packages/cache (none => read)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/rem-dir/.opam-switch/packages/cache (read => none)
+SYSTEM                          scan files in ${BASEDIR}/OPAM/rem-dir/.opam-switch/config
 The following actions will be performed:
 === remove 1 package
   - remove no-specified-dir 1
@@ -323,6 +327,11 @@ The following actions will be performed:
 <><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 SYSTEM                          mkdir ${BASEDIR}/OPAM/rem-dir/.opam-switch/remove
 SYSTEM                          mkdir ${BASEDIR}/OPAM/rem-dir/.opam-switch/remove/no-specified-dir.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/rem-dir/lib/no-specified-dir
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/rem-dir/lib/no-specified-dir
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/rem-dir/share/no-specified-dir
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/rem-dir/etc/no-specified-dir
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/rem-dir/doc/no-specified-dir
 SYSTEM                          rmdir ${BASEDIR}/OPAM/rem-dir/lib/no-specified-dir
 SYSTEM                          rmdir ${BASEDIR}/OPAM/rem-dir/lib/no-specified-dir
 SYSTEM                          rm ${BASEDIR}/OPAM/rem-dir/share/no-specified-dir/a-file
@@ -431,6 +440,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/lock (none => write)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (none => read)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (read => none)
+SYSTEM                          scan files in ${BASEDIR}/OPAM/escapability/.opam-switch/config
 SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/backup
 The following actions will be performed:
 === install 1 package
@@ -439,6 +449,7 @@ The following actions will be performed:
 <><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 SYSTEM                          rmdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1
 SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/eskape.install
 SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/eskape.install
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/a-file
@@ -476,6 +487,7 @@ SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/
 -> installed eskape.1
 SYSTEM                          rm ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache
 SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files
 SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/eskape.install
 SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/packages/eskape.1/files/eskape.install
@@ -516,6 +528,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/lock (none => write)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (none => write)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (write => none)
+SYSTEM                          scan files in ${BASEDIR}/OPAM/escapability/.opam-switch/config
 The following actions will be performed:
 === install 1 package
   - install eskape 1
@@ -528,6 +541,8 @@ SYSTEM                          rm ${BASEDIR}/OPAM/escapability/.opam-switch/bui
 SYSTEM                          rm ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/dosiero
 SYSTEM                          rm ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/good
 SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/eskape.install
 SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape.1/eskape.install
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape/eskape.1/files/a-file
@@ -606,6 +621,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/lock (none => write)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (none => read)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (read => none)
+SYSTEM                          scan files in ${BASEDIR}/OPAM/escapability/.opam-switch/config
 The following actions will be performed:
 === install 1 package
   - install eskape-rel-dotdot-exists 1
@@ -613,6 +629,8 @@ The following actions will be performed:
 <><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 SYSTEM                          rmdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape-rel-dotdot-exists.1
 SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape-rel-dotdot-exists.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/eskape-rel-dotdot-exists/eskape-rel-dotdot-exists.1/files
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/eskape-rel-dotdot-exists/eskape-rel-dotdot-exists.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape-rel-dotdot-exists/eskape-rel-dotdot-exists.1/files/eskape-rel-dotdot-exists.install
 SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape-rel-dotdot-exists.1/eskape-rel-dotdot-exists.install
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape-rel-dotdot-exists/eskape-rel-dotdot-exists.1/files/a-file
@@ -693,6 +711,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/lock (none => write)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (none => read)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (read => none)
+SYSTEM                          scan files in ${BASEDIR}/OPAM/escapability/.opam-switch/config
 The following actions will be performed:
 === install 1 package
   - install eskape-rel-middotdot-notexists 1
@@ -700,6 +719,8 @@ The following actions will be performed:
 <><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 SYSTEM                          rmdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape-rel-middotdot-notexists.1
 SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape-rel-middotdot-notexists.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/eskape-rel-middotdot-notexists/eskape-rel-middotdot-notexists.1/files
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/eskape-rel-middotdot-notexists/eskape-rel-middotdot-notexists.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape-rel-middotdot-notexists/eskape-rel-middotdot-notexists.1/files/eskape-rel-middotdot-notexists.install
 SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape-rel-middotdot-notexists.1/eskape-rel-middotdot-notexists.install
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape-rel-middotdot-notexists/eskape-rel-middotdot-notexists.1/files/a-file
@@ -793,6 +814,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/lock (none => write)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (none => read)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (read => none)
+SYSTEM                          scan files in ${BASEDIR}/OPAM/escapability/.opam-switch/config
 The following actions will be performed:
 === install 1 package
   - install realeskape-rel-middotdot-notexists 1
@@ -800,6 +822,7 @@ The following actions will be performed:
 <><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 SYSTEM                          rmdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/realeskape-rel-middotdot-notexists.1
 SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/realeskape-rel-middotdot-notexists.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/realeskape-rel-middotdot-notexists/realeskape-rel-middotdot-notexists.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/realeskape-rel-middotdot-notexists/realeskape-rel-middotdot-notexists.1/files/realeskape-rel-middotdot-notexists.install
 SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/realeskape-rel-middotdot-notexists.1/realeskape-rel-middotdot-notexists.install
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/realeskape-rel-middotdot-notexists/realeskape-rel-middotdot-notexists.1/files/a-file
@@ -822,10 +845,15 @@ SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/
           Path 'tmp/../../../../middle/a-file' contains '..', its use is discouraged
 [WARNING] At ${BASEDIR}/OPAM/escapability/.opam-switch/install/realeskape-rel-middotdot-notexists.install:5:15-5:46::
           Path 'tmp/../../../../middle/a-file' contains '..', its use is discouraged
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/escapability/lib/realeskape-rel-middotdot-notexists
 SYSTEM                          rmdir ${BASEDIR}/OPAM/escapability/lib/realeskape-rel-middotdot-notexists
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/escapability/lib/realeskape-rel-middotdot-notexists
 SYSTEM                          rmdir ${BASEDIR}/OPAM/escapability/lib/realeskape-rel-middotdot-notexists
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/escapability/share/realeskape-rel-middotdot-notexists
 SYSTEM                          rmdir ${BASEDIR}/OPAM/escapability/share/realeskape-rel-middotdot-notexists
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/escapability/etc/realeskape-rel-middotdot-notexists
 SYSTEM                          rmdir ${BASEDIR}/OPAM/escapability/etc/realeskape-rel-middotdot-notexists
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/escapability/doc/realeskape-rel-middotdot-notexists
 SYSTEM                          rmdir ${BASEDIR}/OPAM/escapability/doc/realeskape-rel-middotdot-notexists
 SYSTEM                          rm ${BASEDIR}/OPAM/escapability/.opam-switch/install/realeskape-rel-middotdot-notexists.install
 
@@ -879,6 +907,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/lock (none => write)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (none => read)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/escapability/.opam-switch/packages/cache (read => none)
+SYSTEM                          scan files in ${BASEDIR}/OPAM/escapability/.opam-switch/config
 The following actions will be performed:
 === install 1 package
   - install eskape-abs 1
@@ -886,6 +915,8 @@ The following actions will be performed:
 <><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 SYSTEM                          rmdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape-abs.1
 SYSTEM                          mkdir ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape-abs.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/eskape-abs/eskape-abs.1/files
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/eskape-abs/eskape-abs.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape-abs/eskape-abs.1/files/eskape-abs.install
 SYSTEM                          write ${BASEDIR}/OPAM/escapability/.opam-switch/build/eskape-abs.1/eskape-abs.install
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/eskape-abs/eskape-abs.1/files/a-file

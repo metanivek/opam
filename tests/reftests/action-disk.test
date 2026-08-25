@@ -110,13 +110,16 @@ SYSTEM                          mkdir ${BASEDIR}/OPAM/repo/default/packages/main
 SYSTEM                          mkdir ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.2/files
 FILE(repo)                      Read ${BASEDIR}/OPAM/repo/default/repo in 0.000s
 Processing: [default: loading data]
-SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/opam
-FILE(opam)                      Read packages/main-repo/main-repo.1/opam (out of ${BASEDIR}/OPAM/repo/default) in 0.000s
-SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files/x-file.main-repo.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.2
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.2/opam
 FILE(opam)                      Read packages/main-repo/main-repo.2/opam (out of ${BASEDIR}/OPAM/repo/default) in 0.000s
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.2/files/x-file.main-repo.2
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/opam
+FILE(opam)                      Read packages/main-repo/main-repo.1/opam (out of ${BASEDIR}/OPAM/repo/default) in 0.000s
+SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files/x-file.main-repo.1
 FILE(repos-config)              Wrote ${BASEDIR}/OPAM/repo/repos-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/repo
 SYSTEM                          rm ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache
 SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache (none => write)
 CACHE(repository)               Writing the repository cache to ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache ...
@@ -169,6 +172,7 @@ CACHE(installed)                ${BASEDIR}/OPAM/install-from-repo/.opam-switch/p
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache (write => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/switch-config atomically in 0.000s
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-repo/.opam-switch/config
 FILE(environment)               Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/environment atomically in 0.000s
 FILE(config)                    Wrote ${BASEDIR}/OPAM/config atomically in 0.000s
 SYSTEM                          write ${BASEDIR}/OPAM/opam-init/variables.sh
@@ -196,6 +200,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-repo/.opam-swi
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-repo/.opam-switch/config
 SYSTEM                          mkdir ${BASEDIR}/OPAM/install-from-repo/.opam-switch/backup
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/backup/state-today.export atomically in 0.000s
 FILE(package-version-list)      Cannot find ${BASEDIR}/OPAM/install-from-repo/.opam-switch/reinstall
@@ -236,6 +241,7 @@ SYSTEM                          rm ${OPAMTMP}/x-source
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/.opam-switch/build/main-repo.1
 SYSTEM                          mv ${BASEDIR}/OPAM/install-from-repo/.opam-switch/sources/main-repo.1 -> ${BASEDIR}/OPAM/install-from-repo/.opam-switch/build/main-repo.1
 SYSTEM                          copy ${BASEDIR}/OPAM/download-cache/md5/pre/+xs-hash+ -> ${BASEDIR}/OPAM/install-from-repo/.opam-switch/build/main-repo.1/x-source.main-repo.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files/x-file.main-repo.1
 SYSTEM                          write ${BASEDIR}/OPAM/install-from-repo/.opam-switch/build/main-repo.1/x-file.main-repo.1
 Processing  2/3: [main-repo: touch build-file]
@@ -254,6 +260,7 @@ FILE(.config)                   Cannot find ${BASEDIR}/OPAM/install-from-repo/.o
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache
 SYSTEM                          mkdir ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/main-repo.1
 FILE(opam)                      Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/main-repo.1/opam atomically in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files
 SYSTEM                          mkdir ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/main-repo.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files/x-file.main-repo.1
 SYSTEM                          write ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/main-repo.1/files/x-file.main-repo.1
@@ -281,6 +288,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-repo/.opam-swi
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-repo/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/backup/state-today.export atomically in 0.000s
 FILE(package-version-list)      Cannot find ${BASEDIR}/OPAM/install-from-repo/.opam-switch/reinstall
 The following actions will be performed:
@@ -303,6 +311,7 @@ SYSTEM                          rm ${BASEDIR}/OPAM/install-from-repo/.opam-switc
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-repo/.opam-switch/build/main-repo.1/x-source.main-repo.1
 SYSTEM                          copy ${BASEDIR}/OPAM/download-cache/md5/pre/+xs-hash+ -> ${BASEDIR}/OPAM/install-from-repo/.opam-switch/build/main-repo.1/x-source.main-repo.1
 SYSTEM                          copy ${BASEDIR}/OPAM/download-cache/md5/pre/+xs-hash+ -> ${BASEDIR}/OPAM/install-from-repo/.opam-switch/remove/main-repo.1/x-source.main-repo.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files/x-file.main-repo.1
 SYSTEM                          write ${BASEDIR}/OPAM/install-from-repo/.opam-switch/build/main-repo.1/x-file.main-repo.1
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files/x-file.main-repo.1
@@ -318,11 +327,17 @@ Processing  2/4: [main-repo: touch build-file]
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/.opam-switch/remove/main-repo.1
 SYSTEM                          mkdir ${BASEDIR}/OPAM/install-from-repo/.opam-switch/remove
 SYSTEM                          mkdir ${BASEDIR}/OPAM/install-from-repo/.opam-switch/remove/main-repo.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files
 Processing  3/4: [main-repo: touch removal-file]
 + touch "removal-file" (CWD=${BASEDIR}/OPAM/install-from-repo/.opam-switch/remove/main-repo.1)
 FILE(.install)                  Cannot find ${BASEDIR}/OPAM/install-from-repo/.opam-switch/install/main-repo.install
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/lib/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/lib/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/share/main-repo
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/share/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/etc/main-repo
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/etc/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/doc/main-repo
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/doc/main-repo
 FILE(changes)                   Read ${BASEDIR}/OPAM/install-from-repo/.opam-switch/install/main-repo.changes in 0.000s
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-repo/lib/main-repo/content
@@ -343,6 +358,7 @@ FILE(environment)               Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-sw
 FILE(.config)                   Cannot find ${BASEDIR}/OPAM/install-from-repo/.opam-switch/config/main-repo.config
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache
 FILE(opam)                      Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/main-repo.1/opam atomically in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache (none => write)
 CACHE(installed)                Writing the installed cache to ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache ...
 CACHE(installed)                ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache written in 0.000s
@@ -371,6 +387,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-repo/.opam-swi
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-repo/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/backup/state-today.export atomically in 0.000s
 FILE(package-version-list)      Cannot find ${BASEDIR}/OPAM/install-from-repo/.opam-switch/reinstall
 The following actions will be performed:
@@ -402,6 +419,7 @@ SYSTEM                          rm ${OPAMTMP}/content
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/.opam-switch/build/main-repo.2
 SYSTEM                          copy ${BASEDIR}/OPAM/download-cache/md5/pre/+xs-hash+ -> ${BASEDIR}/OPAM/install-from-repo/.opam-switch/build/main-repo.2/x-source.main-repo.2
 SYSTEM                          copy ${BASEDIR}/OPAM/download-cache/md5/pre/+xs-hash+ -> ${BASEDIR}/OPAM/install-from-repo/.opam-switch/remove/main-repo.1/x-source.main-repo.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.2/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.2/files/x-file.main-repo.2
 SYSTEM                          write ${BASEDIR}/OPAM/install-from-repo/.opam-switch/build/main-repo.2/x-file.main-repo.2
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files/x-file.main-repo.1
@@ -413,11 +431,17 @@ Processing  2/4: [main-repo: touch build-file]
 + touch "build-file" (CWD=${BASEDIR}/OPAM/install-from-repo/.opam-switch/build/main-repo.2)
 -> compiled  main-repo.2
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/.opam-switch/remove/main-repo.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files
 Processing  3/4: [main-repo: touch removal-file]
 + touch "removal-file" (CWD=${BASEDIR}/OPAM/install-from-repo/.opam-switch/remove/main-repo.1)
 FILE(.install)                  Cannot find ${BASEDIR}/OPAM/install-from-repo/.opam-switch/install/main-repo.install
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/lib/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/lib/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/share/main-repo
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/share/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/etc/main-repo
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/etc/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/doc/main-repo
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/doc/main-repo
 FILE(changes)                   Read ${BASEDIR}/OPAM/install-from-repo/.opam-switch/install/main-repo.changes in 0.000s
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-repo/lib/main-repo/content
@@ -439,6 +463,7 @@ FILE(.config)                   Cannot find ${BASEDIR}/OPAM/install-from-repo/.o
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache
 SYSTEM                          mkdir ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/main-repo.2
 FILE(opam)                      Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/main-repo.2/opam atomically in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.2/files
 SYSTEM                          mkdir ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/main-repo.2/files
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache (none => write)
 CACHE(installed)                Writing the installed cache to ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache ...
@@ -475,6 +500,7 @@ CACHE(installed)                Writing the installed cache to ${BASEDIR}/OPAM/i
 CACHE(installed)                ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache written in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-repo/.opam-switch/packages/cache (write => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-repo/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-repo/.opam-switch/backup/state-today.export atomically in 0.000s
 FILE(package-version-list)      Cannot find ${BASEDIR}/OPAM/install-from-repo/.opam-switch/reinstall
 The following actions will be performed:
@@ -495,14 +521,20 @@ SYSTEM                          rm ${OPAMTMP}/content
 -> retrieved main-repo.2  (cached)
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/.opam-switch/remove/main-repo.2
 SYSTEM                          copy ${BASEDIR}/OPAM/download-cache/md5/pre/+xs-hash+ -> ${BASEDIR}/OPAM/install-from-repo/.opam-switch/remove/main-repo.2/x-source.main-repo.2
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.2/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.2/files/x-file.main-repo.2
 SYSTEM                          write ${BASEDIR}/OPAM/install-from-repo/.opam-switch/remove/main-repo.2/x-file.main-repo.2
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-repo/.opam-switch/remove/main-repo.2/x-source.main-repo.2
 Processing  2/2: [main-repo: touch removal-file]
 + touch "removal-file" (CWD=${BASEDIR}/OPAM/install-from-repo/.opam-switch/remove/main-repo.2)
 FILE(.install)                  Cannot find ${BASEDIR}/OPAM/install-from-repo/.opam-switch/install/main-repo.install
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/lib/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/lib/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/share/main-repo
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/share/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/etc/main-repo
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/etc/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-repo/doc/main-repo
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-repo/doc/main-repo
 FILE(changes)                   Read ${BASEDIR}/OPAM/install-from-repo/.opam-switch/install/main-repo.changes in 0.000s
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-repo/lib/main-repo/content
@@ -582,6 +614,7 @@ CACHE(installed)                ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (write => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config atomically in 0.000s
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/config
 FILE(environment)               Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/environment atomically in 0.000s
 FILE(config)                    Wrote ${BASEDIR}/OPAM/config atomically in 0.000s
 SYSTEM                          write ${BASEDIR}/OPAM/opam-init/variables.sh
@@ -595,6 +628,10 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/lock (none => none)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/config.lock (none => none)
 ### opam pin ./main-ppin -n | grep -v '^- ./$' | sed-cmd rsync
 FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/main-ppin/opam
+SYSTEM                          scan dirs in ${BASEDIR}/main-ppin/opam
+SYSTEM                          scan files in ${BASEDIR}/main-ppin
+SYSTEM                          scan dirs in ${BASEDIR}/main-ppin
 FILE(opam)                      Read ${BASEDIR}/main-ppin/main-ppin.opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/lock (none => read)
 FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
@@ -608,6 +645,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/config
 SYSTEM                          mkdir ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/backup
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 SYSTEM                          mkdir ${OPAMTMP}
@@ -644,12 +682,16 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/sources/main-ppin/files
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin/opam
 FILE(opam)                      Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin/opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (none => read)
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 
 <><> Synchronising pinned packages ><><><><><><><><><><><><><><><><><><><><><><>
@@ -724,12 +766,21 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/sources/main-ppin/files
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/lib/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/lib/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/share/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/etc/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/doc/main-ppin
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin/opam
 FILE(opam)                      Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin/opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (none => read)
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 
 <><> Synchronising pinned packages ><><><><><><><><><><><><><><><><><><><><><><>
@@ -824,12 +875,19 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/lib/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/lib/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/share/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/etc/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/doc/main-ppin
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin/opam
 FILE(opam)                      Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin/opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (none => read)
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 FILE(package-version-list)      Cannot find ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/reinstall
 The following actions will be performed:
@@ -890,6 +948,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin/opam
 FILE(opam)                      Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin/opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (none => write)
@@ -897,6 +956,7 @@ CACHE(installed)                Writing the installed cache to ${BASEDIR}/OPAM/i
 CACHE(installed)                ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache written in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (write => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/sources/main-ppin
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/sources/main-ppin/content
@@ -941,8 +1001,14 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/main-ppin/opam
+SYSTEM                          scan dirs in ${BASEDIR}/main-ppin/opam
+SYSTEM                          scan files in ${BASEDIR}/main-ppin
+SYSTEM                          scan dirs in ${BASEDIR}/main-ppin
 FILE(opam)                      Read ${BASEDIR}/main-ppin/main-ppin.opam in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/main-ppin
 [NOTE] Package main-ppin does not exist in opam repositories registered in the current switch.
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin
 SYSTEM                          read ${BASEDIR}/main-ppin/main-ppin.opam
@@ -1012,12 +1078,21 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/sources/main-ppin/files
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/lib/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/lib/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/share/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/etc/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/doc/main-ppin
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin/opam
 FILE(opam)                      Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin/opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (none => read)
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 
 <><> Synchronising pinned packages ><><><><><><><><><><><><><><><><><><><><><><>
@@ -1111,12 +1186,19 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/lib/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/lib/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/share/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/etc/main-ppin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-path-pin-all/doc/main-ppin
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin/opam
 FILE(opam)                      Read ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/overlay/main-ppin/opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (none => read)
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/sources/main-ppin
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-path-pin-all/.opam-switch/sources/main-ppin/content
@@ -1235,6 +1317,7 @@ CACHE(installed)                ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (write => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config atomically in 0.000s
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/config
 FILE(environment)               Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/environment atomically in 0.000s
 FILE(config)                    Wrote ${BASEDIR}/OPAM/config atomically in 0.000s
 SYSTEM                          write ${BASEDIR}/OPAM/opam-init/variables.sh
@@ -1250,6 +1333,10 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/config.lock (none => none)
 + git "-C" "${BASEDIR}/main-gpin" "symbolic-ref" "--quiet" "--short" "HEAD"
 - master
 FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/main-gpin/opam
+SYSTEM                          scan dirs in ${BASEDIR}/main-gpin/opam
+SYSTEM                          scan files in ${BASEDIR}/main-gpin
+SYSTEM                          scan dirs in ${BASEDIR}/main-gpin
 FILE(opam)                      Read ${BASEDIR}/main-gpin/main-gpin.opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/lock (none => read)
 FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
@@ -1263,6 +1350,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.o
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/config
 SYSTEM                          mkdir ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/backup
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 SYSTEM                          mkdir ${OPAMTMP}
@@ -1309,12 +1397,16 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/sources/main-gpin/files
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin/opam
 FILE(opam)                      Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin/opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (none => read)
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 
 <><> Synchronising pinned packages ><><><><><><><><><><><><><><><><><><><><><><>
@@ -1395,12 +1487,21 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/sources/main-gpin/files
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/lib/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/lib/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/share/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/etc/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/doc/main-gpin
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin/opam
 FILE(opam)                      Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin/opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (none => read)
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 
 <><> Synchronising pinned packages ><><><><><><><><><><><><><><><><><><><><><><>
@@ -1508,12 +1609,19 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/lib/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/lib/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/share/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/etc/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/doc/main-gpin
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin/opam
 FILE(opam)                      Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin/opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (none => read)
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 FILE(package-version-list)      Cannot find ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/reinstall
 The following actions will be performed:
@@ -1578,6 +1686,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin/opam
 FILE(opam)                      Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin/opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (none => write)
@@ -1585,6 +1694,7 @@ CACHE(installed)                Writing the installed cache to ${BASEDIR}/OPAM/i
 CACHE(installed)                ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache written in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (write => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/sources/main-gpin
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/sources/main-gpin/content
@@ -1629,6 +1739,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.o
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 + git "-C" "${BASEDIR}/main-gpin" "symbolic-ref" "--quiet" "--short" "HEAD"
 + git "-C" "${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/sources/main-gpin" "init" "--initial-branch=main"
@@ -1645,7 +1756,12 @@ FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.
 + git "-C" "${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/sources/main-gpin" "reset" "--hard" "refs/remotes/opam-ref-master" "--"
 + git "-C" "${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/sources/main-gpin" "clean" "-fdx"
 - master
+SYSTEM                          scan files in ${BASEDIR}/main-gpin/opam
+SYSTEM                          scan dirs in ${BASEDIR}/main-gpin/opam
+SYSTEM                          scan files in ${BASEDIR}/main-gpin
+SYSTEM                          scan dirs in ${BASEDIR}/main-gpin
 FILE(opam)                      Read ${BASEDIR}/main-gpin/main-gpin.opam in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/main-gpin
 [NOTE] Package main-gpin does not exist in opam repositories registered in the current switch.
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin
 SYSTEM                          read ${BASEDIR}/main-gpin/main-gpin.opam
@@ -1712,12 +1828,21 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/sources/main-gpin/files
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/lib/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/lib/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/share/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/etc/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/doc/main-gpin
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin/opam
 FILE(opam)                      Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin/opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (none => read)
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 
 <><> Synchronising pinned packages ><><><><><><><><><><><><><><><><><><><><><><>
@@ -1824,12 +1949,19 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/lib/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/lib/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/share/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/etc/main-gpin
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-git-pin-all/doc/main-gpin
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin/opam
 FILE(opam)                      Read ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/overlay/main-gpin/opam in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (none => read)
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/backup/state-today.export atomically in 0.000s
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/sources/main-gpin
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-git-pin-all/.opam-switch/sources/main-gpin/content
@@ -1946,6 +2078,7 @@ CACHE(installed)                ${BASEDIR}/OPAM/install-from-version-pin/.opam-s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache (write => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-config atomically in 0.000s
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/config
 FILE(environment)               Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/environment atomically in 0.000s
 FILE(config)                    Wrote ${BASEDIR}/OPAM/config atomically in 0.000s
 SYSTEM                          write ${BASEDIR}/OPAM/opam-init/variables.sh
@@ -1971,6 +2104,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.o
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/config
 SYSTEM                          mkdir ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/backup
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/backup/state-today.export atomically in 0.000s
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-state atomically in 0.000s
@@ -1992,11 +2126,13 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/overlay/main-repo
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/overlay/main-repo/opam
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache (none => read)
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/backup/state-today.export atomically in 0.000s
 FILE(package-version-list)      Cannot find ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/reinstall
 The following actions will be performed:
@@ -2020,6 +2156,7 @@ SYSTEM                          copydir ${BASEDIR}/OPAM/install-from-version-pin
 SYSTEM                          mkdir ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/build/main-repo.1
 SYSTEM                          copy ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/sources/main-repo/content -> ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/build/main-repo.1/content
 SYSTEM                          copy ${BASEDIR}/OPAM/download-cache/md5/pre/+xs-hash+ -> ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/build/main-repo.1/x-source.main-repo.1
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files/x-file.main-repo.1
 SYSTEM                          write ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/build/main-repo.1/x-file.main-repo.1
 Processing  2/3: [main-repo: touch build-file]
@@ -2038,6 +2175,7 @@ FILE(.config)                   Cannot find ${BASEDIR}/OPAM/install-from-version
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache
 SYSTEM                          mkdir ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/main-repo.1
 FILE(opam)                      Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/main-repo.1/opam atomically in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files
 SYSTEM                          mkdir ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/main-repo.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files/x-file.main-repo.1
 SYSTEM                          write ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/main-repo.1/files/x-file.main-repo.1
@@ -2061,11 +2199,21 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/overlay/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/lib/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/lib/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/share/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/etc/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/doc/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/overlay/main-repo/opam
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache (none => read)
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/backup/state-today.export atomically in 0.000s
 FILE(package-version-list)      Cannot find ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/reinstall
 The following actions will be performed:
@@ -2159,11 +2307,19 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/overlay/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.1/files
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/lib/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/lib/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/share/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/etc/main-repo
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/doc/main-repo
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/overlay/main-repo/opam
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache (none => read)
 CACHE(installed)                Loaded ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache (read => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/backup/state-today.export atomically in 0.000s
 FILE(package-version-list)      Cannot find ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/reinstall
 The following actions will be performed:
@@ -2232,12 +2388,14 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/state-${MAGICV}.cache 
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/lock (none => write)
 FILE(switch-config)             Read ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-config in 0.000s
 FILE(switch-state)              Read ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-state in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/overlay/main-repo
 SYSTEM                          read ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/overlay/main-repo/opam
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache (none => write)
 CACHE(installed)                Writing the installed cache to ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache ...
 CACHE(installed)                ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache written in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/packages/cache (write => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/config
 FILE(switch-state)              Wrote ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/backup/state-today.export atomically in 0.000s
 SYSTEM                          rmdir ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/sources/main-repo
 SYSTEM                          rm ${BASEDIR}/OPAM/install-from-version-pin/.opam-switch/sources/main-repo/content
@@ -2298,6 +2456,7 @@ CACHE(installed)                Writing the installed cache to ${BASEDIR}/OPAM/p
 CACHE(installed)                ${BASEDIR}/OPAM/package-switch/.opam-switch/packages/cache written in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/package-switch/.opam-switch/packages/cache (write => none)
 FILE(switch-config)             Wrote ${BASEDIR}/OPAM/package-switch/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/OPAM/package-switch/.opam-switch/config
 
 <><> Installing new switch packages <><><><><><><><><><><><><><><><><><><><><><>
 Switch invariant: ["main-repo"]
@@ -2318,6 +2477,7 @@ SYSTEM                          rm ${OPAMTMP}/content
 SYSTEM                          rmdir ${BASEDIR}/OPAM/package-switch/.opam-switch/build/main-repo.2
 SYSTEM                          mv ${BASEDIR}/OPAM/package-switch/.opam-switch/sources/main-repo.2 -> ${BASEDIR}/OPAM/package-switch/.opam-switch/build/main-repo.2
 SYSTEM                          copy ${BASEDIR}/OPAM/download-cache/md5/pre/+xs-hash+ -> ${BASEDIR}/OPAM/package-switch/.opam-switch/build/main-repo.2/x-source.main-repo.2
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.2/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.2/files/x-file.main-repo.2
 SYSTEM                          write ${BASEDIR}/OPAM/package-switch/.opam-switch/build/main-repo.2/x-file.main-repo.2
 Processing  2/3: [main-repo: touch build-file]
@@ -2336,6 +2496,7 @@ FILE(.config)                   Cannot find ${BASEDIR}/OPAM/package-switch/.opam
 SYSTEM                          rm ${BASEDIR}/OPAM/package-switch/.opam-switch/packages/cache
 SYSTEM                          mkdir ${BASEDIR}/OPAM/package-switch/.opam-switch/packages/main-repo.2
 FILE(opam)                      Wrote ${BASEDIR}/OPAM/package-switch/.opam-switch/packages/main-repo.2/opam atomically in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.2/files
 SYSTEM                          mkdir ${BASEDIR}/OPAM/package-switch/.opam-switch/packages/main-repo.2/files
 SYSTEM                          read ${BASEDIR}/OPAM/repo/default/packages/main-repo/main-repo.2/files/x-file.main-repo.2
 SYSTEM                          write ${BASEDIR}/OPAM/package-switch/.opam-switch/packages/main-repo.2/files/x-file.main-repo.2
@@ -2401,6 +2562,11 @@ CACHE(installed)                ${BASEDIR}/void/_opam/.opam-switch/packages/cach
 SYSTEM                          LOCK ${BASEDIR}/void/_opam/.opam-switch/packages/cache (write => none)
 FILE(switch-config)             Wrote ${BASEDIR}/void/_opam/.opam-switch/switch-config atomically in 0.000s
 FILE(switch-config)             Wrote ${BASEDIR}/void/_opam/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/void/_opam/.opam-switch/config
+SYSTEM                          scan files in ${BASEDIR}/void/opam
+SYSTEM                          scan dirs in ${BASEDIR}/void/opam
+SYSTEM                          scan files in ${BASEDIR}/void
+SYSTEM                          scan dirs in ${BASEDIR}/void
 FILE(environment)               Wrote ${BASEDIR}/void/_opam/.opam-switch/environment atomically in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/config.lock (write => none)
 SYSTEM                          LOCK ${BASEDIR}/void/_opam/.opam-switch/lock (write => none)
@@ -2451,7 +2617,13 @@ CACHE(installed)                ${BASEDIR}/main-ppin/_opam/.opam-switch/packages
 SYSTEM                          LOCK ${BASEDIR}/main-ppin/_opam/.opam-switch/packages/cache (write => none)
 FILE(switch-config)             Wrote ${BASEDIR}/main-ppin/_opam/.opam-switch/switch-config atomically in 0.000s
 FILE(switch-config)             Wrote ${BASEDIR}/main-ppin/_opam/.opam-switch/switch-config atomically in 0.000s
+SYSTEM                          scan files in ${BASEDIR}/main-ppin/_opam/.opam-switch/config
+SYSTEM                          scan files in ${BASEDIR}/main-ppin/opam
+SYSTEM                          scan dirs in ${BASEDIR}/main-ppin/opam
+SYSTEM                          scan files in ${BASEDIR}/main-ppin
+SYSTEM                          scan dirs in ${BASEDIR}/main-ppin
 FILE(opam)                      Read ${BASEDIR}/main-ppin/main-ppin.opam in 0.000s
+SYSTEM                          scan files recursively (except_vcs: false) in ${BASEDIR}/main-ppin
 [NOTE] Package main-ppin does not exist in opam repositories registered in the current switch.
 SYSTEM                          rmdir ${BASEDIR}/main-ppin/_opam/.opam-switch/overlay/main-ppin
 SYSTEM                          read ${BASEDIR}/main-ppin/main-ppin.opam

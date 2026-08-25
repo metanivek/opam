@@ -370,23 +370,27 @@ let directories_with_links ?(except_vcs=false) =
   if except_vcs && is_vcs (Filename.basename f) then false else
   try Sys.is_directory f with Sys_error _ -> false)
 
-let rec_files ?except_vcs dir =
+let rec_files ?(except_vcs=false) dir =
+  log ~level:4 "scan files recursively (except_vcs: %b) in %s" except_vcs dir;
   let rec aux accu dir =
-    let d = directories_with_links ?except_vcs dir in
+    let d = directories_with_links ~except_vcs dir in
     let f = files_with_links dir in
     List.fold_left aux (f @ accu) d in
   aux [] dir
 
 let files dir =
+  log ~level:4 "scan files in %s" dir;
   files_with_links dir
 
 let rec_dirs dir =
+  log ~level:4 "scan dirs recursively in %s" dir;
   let rec aux accu dir =
     let d = directories_with_links dir in
     List.fold_left aux (d @ accu) d in
   aux [] dir
 
 let dirs dir =
+  log ~level:4 "scan dirs in %s" dir;
   directories_with_links dir
 
 let dir_is_empty dir =

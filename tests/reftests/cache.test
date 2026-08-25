@@ -360,6 +360,7 @@ CACHE(installed)                Bad installed cache: incompatible magic string "
 SYSTEM                          LOCK ${BASEDIR}/OPAM/safe-cache/.opam-switch/packages/cache (read => none)
 CACHE(installed)                Invalid installed cache, removing
 CACHE(installed)                Running in safe mode, not upgrading the installed cache
+SYSTEM                          scan files in ${BASEDIR}/OPAM/safe-cache/.opam-switch/config
 im-here
 SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/lock (none => none)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/config.lock (none => none)
@@ -399,6 +400,7 @@ SYSTEM                          LOCK ${BASEDIR}/OPAM/safe-cache/.opam-switch/pac
 CACHE(installed)                Writing the installed cache to ${BASEDIR}/OPAM/safe-cache/.opam-switch/packages/cache ...
 CACHE(installed)                ${BASEDIR}/OPAM/safe-cache/.opam-switch/packages/cache written in 0.000s
 SYSTEM                          LOCK ${BASEDIR}/OPAM/safe-cache/.opam-switch/packages/cache (write => none)
+SYSTEM                          scan files in ${BASEDIR}/OPAM/safe-cache/.opam-switch/config
 im-here
 SYSTEM                          LOCK ${BASEDIR}/OPAM/repo/lock (none => none)
 SYSTEM                          LOCK ${BASEDIR}/OPAM/config.lock (none => none)

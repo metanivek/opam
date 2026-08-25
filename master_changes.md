@@ -129,3 +129,4 @@ users)
 ## opam-format
 
 ## opam-core
+  * `OpamSystem.{rec_,}{files,dirs}`: add some log in debug mode [#7101 @kit-ty-kate]
