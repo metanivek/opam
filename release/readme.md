@@ -36,6 +36,7 @@
 ## Publish the release
 
 * finalise the release (publish)
+* while doing the rest of the release process, pre-built binaries can be re-built to check for reproduciblity (check side notes about reproducibility below)
 * add hashes in `install.sh` and `install.ps1` (and check signatures)
 * update `OPAM_TEST_REPO_SHA` in `ci.ml` and update version in `main.sh` for dependencies job
 * bring the changes to the changelog (CHANGES) from the branch of the release to the `master` branch
@@ -68,3 +69,20 @@
 * brew dependencies: git >= 2.40.0, git-lfs, gpg, qemu>=8.1.0 (avoid qemu 9.1.x, see https://gitlab.com/qemu-project/qemu/-/issues/2581), docker>=24.0.0, sshpass
 * opam repo with the tag fetched
 * Have the secret key available
+
+## Side note on "reproducibility"
+
+Linux, FreeBSD, OpenBSD, NetBSD and Windows binaries should be "reproducible".
+macOS binaries are not (lack of sandbox, Mach-O's `LC_UUID` field will change for some reason even on the same machine).
+
+At the moment, "reproduciblity" in the context of opam releases is a weak subset of "reproducible builds" as described in
+https://reproducible-builds.org/docs/definition/
+
+Our current definition is that the binaries are "reproducible" modulo:
+- C compiler and tools version installed or upgraded during setup (e.g. apk add, cygwin's setup.exe)
+- changes or updates to the base images (docker and qemu)
+
+In practice, this means that there might be a timer on whether a binary can be reproduced
+(maybe a few months, maybe much more depending on whether the package repository for the given system
+at the particular version keeps the same version of the C compiler as was used during the original build).
+This is mostly a worry for Windows rather than Linux and BSDs given the rolling-release nature of Cygwin.
