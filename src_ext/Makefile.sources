@@ -4,8 +4,8 @@ MD5_cppo = a197cb393b84f6b30e0ff55080ac429b
 URL_extlib = https://github.com/ygrek/ocaml-extlib/releases/download/1.8.0/extlib-1.8.0.tar.gz
 MD5_extlib = 43fb3bf2989671af1769147b1171d080
 
-URL_base64 = https://github.com/mirage/ocaml-base64/releases/download/v3.5.1/base64-3.5.1.tbz
-MD5_base64 = bfdd16aa8c136412878109df8791fc01
+URL_base64 = https://github.com/mirage/ocaml-base64/releases/download/v3.5.2/base64-3.5.2.tbz
+MD5_base64 = 28a7acd8e8f90ab128b51ee8c0ffc355
 
 URL_re = https://github.com/ocaml/ocaml-re/archive/refs/tags/1.14.0.tar.gz
 MD5_re = 03f4a83100cb9229a796b85c698076e1
@@ -36,8 +36,8 @@ include Makefile.dune
 URL_stdlib-shims = https://github.com/ocaml/stdlib-shims/releases/download/0.3.0/stdlib-shims-0.3.0.tbz
 MD5_stdlib-shims = 09db7af8b4a3a96048a61cb6ae2496ef
 
-URL_spdx_licenses = https://github.com/kit-ty-kate/spdx_licenses/releases/download/v1.4.0/spdx_licenses-1.4.0.tar.gz
-MD5_spdx_licenses = 6accb8029f7401f1face7d4f7efa5fa7
+URL_spdx_licenses = https://github.com/kit-ty-kate/spdx_licenses/releases/download/v1.5.0/spdx_licenses-1.5.0.tar.gz
+MD5_spdx_licenses = 1071f6377ebc872404e3ee0d03838299
 
 URL_uutf = https://erratique.ch/software/uutf/releases/uutf-1.0.4.tbz
 MD5_uutf = 19c8e6d8ae6c70116495a7d44ac75f3d
@@ -51,14 +51,14 @@ MD5_sha = 08bc953d9a26380bc220b05d680791fb
 URL_swhid_core = https://github.com/OCamlPro/swhid_core/archive/refs/tags/0.1.tar.gz
 MD5_swhid_core = 77d88d4b1d96261c866f140c64d89af8
 
-URL_menhir = https://gitlab.inria.fr/fpottier/menhir/-/archive/20250903/archive.tar.gz
-MD5_menhir = 5ecb7f71cf374147d3d3137c6e2fe382
+URL_menhir = https://gitlab.inria.fr/fpottier/menhir/-/archive/20260209/archive.tar.gz
+MD5_menhir = e993231085db95ab011ffe0cd606d9dd
 
-URL_patch = https://github.com/hannesm/patch/releases/download/v3.1.0/patch-3.1.0.tbz
-MD5_patch = afda4079f824f3c2ae69f5064bcf870b
+URL_patch = https://github.com/hannesm/patch/releases/download/v3.1.2/patch-3.1.2.tbz
+MD5_patch = 64838d4076de9825d2046e00d0684789
 
-URL_checkseum = https://github.com/mirage/checkseum/releases/download/v0.5.2/checkseum-0.5.2.tbz
-MD5_checkseum = 2e41c0d1ec16aca3f33b148b06ded014
+URL_checkseum = https://github.com/mirage/checkseum/releases/download/v0.5.3/checkseum-0.5.3.tbz
+MD5_checkseum = 432aa95f12a8eb2bbf298362c9c441e7
 
 URL_optint = https://github.com/mirage/optint/releases/download/v0.3.0/optint-0.3.0.tbz
 MD5_optint = 46cc1b8bd00872529ac01407f908d389
