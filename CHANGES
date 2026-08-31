@@ -3,6 +3,21 @@ repositories (changes that are automatically handled by the format upgrade tools
 are not marked). Those prefixed with "(+)" are new command/option (since
 2.1.0~alpha2).
 
+2.6.0~beta2:
+* Fix a performance regression where opam project trees were scanned for
+  nothing, when pinning them [#7101 @kit-ty-kate - fix #7098]
+* Improve the release script and documentation:
+  * Harden against known `sshpass` instability [#7096 @kit-ty-kate]
+  * Make the Windows binary reproducible [#7097 @kit-ty-kate - fix #6752]
+  * Add a reproducibility check step to our release checklist
+    [#7097 @kit-ty-kate]
+  * Document and define reproducibility of release binaries and tarballs
+    [#7097 #7115 @kit-ty-kate]
+* Improve and extend the testsuite [#7101 @kit-ty-kate]
+* API changes in `opam-core`:
+  * `OpamSystem.{rec_,}{files,dirs}`: add some log in debug mode
+    [#7101 @kit-ty-kate]
+
 2.6.0~beta1:
 * Do not make `opam init --reinit` ask to retry the command when upgrading
   from a 2.1 root [#7058 @kit-ty-kate - fix #7057]
