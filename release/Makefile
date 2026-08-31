@@ -46,21 +46,19 @@ $(OUTDIR)/opam-full-$(VERSION).tar.gz:
 	rm -rf "$(OUTDIR)/opam-full-$(VERSION)"
 
 build/Dockerfile.x86_64-linux: Dockerfile.in
-	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/x86_64-v$(ALPINE_VERSION)/g' -e 's/%CONF%//g' $^ >$@
+	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/x86_64-v$(ALPINE_VERSION)/g' $^ >$@
 build/Dockerfile.i686-linux: Dockerfile.in
-	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/x86-v$(ALPINE_VERSION)/g' -e 's/%CONF%/-build i586-alpine-linux-musl/g' $^ >$@
-
-# Need to lie about gnueabihf instead of musleabihf, because of a ./configure bug
+	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/x86-v$(ALPINE_VERSION)/g' $^ >$@
 build/Dockerfile.armhf-linux: Dockerfile.in
-	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/armv7-v$(ALPINE_VERSION)/g' -e 's/%CONF%//g' $^ >$@
+	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/armv7-v$(ALPINE_VERSION)/g' $^ >$@
 build/Dockerfile.arm64-linux: Dockerfile.in
-	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/arm64-v$(ALPINE_VERSION)/g' -e 's/%CONF%//g' $^ >$@
+	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/arm64-v$(ALPINE_VERSION)/g' $^ >$@
 build/Dockerfile.ppc64le-linux: Dockerfile.in
-	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/ppc64le-v$(ALPINE_VERSION)/g' -e 's/%CONF%//g' $^ >$@
+	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/ppc64le-v$(ALPINE_VERSION)/g' $^ >$@
 build/Dockerfile.s390x-linux: Dockerfile.in
-	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/s390x-v$(ALPINE_VERSION)/g' -e 's/%CONF%//g' $^ >$@
+	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/s390x-v$(ALPINE_VERSION)/g' $^ >$@
 build/Dockerfile.riscv64-linux: Dockerfile.in
-	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/riscv64-v$(ALPINE_VERSION)/g' -e 's/%CONF%//g' $^ >$@
+	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/riscv64-v$(ALPINE_VERSION)/g' $^ >$@
 
 
 build/%.image: build/Dockerfile.%
