@@ -72,7 +72,7 @@
 
 ## Side note on "reproducibility"
 
-Linux, FreeBSD, OpenBSD, NetBSD and Windows binaries should be "reproducible".
+Linux, FreeBSD, OpenBSD, NetBSD and Windows binaries should be "reproducible". The `opam-full-*.tar.gz` archive is also reproducible.
 macOS binaries are not (lack of sandbox, Mach-O's `LC_UUID` field will change for some reason even on the same machine).
 
 At the moment, "reproduciblity" in the context of opam releases is a weak subset of "reproducible builds" as described in
