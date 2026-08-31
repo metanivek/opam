@@ -76,6 +76,7 @@ users)
 ## Infrastructure
 
 ## Release scripts
+  * Update the OCaml compiler used for release to 4.14.4 [#7116 @kit-ty-kate]
 
 ## Install script
 
