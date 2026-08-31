@@ -1518,10 +1518,21 @@ let get_extrafiles ~repo_root dir =
         OpamRepositoryRoot.remove_prefix repo_root file
     | None -> OpamFilename.Unix.of_filename
   in
-  List.fold_left (fun map file ->
-      OpamFilename.Unix.Map.add (to_key file)
-        (lazy (OpamFilename.read file)) map)
-    OpamFilename.Unix.Map.empty (OpamFilename.rec_files dir)
+  let aux map file =
+    OpamFilename.Unix.Map.add (to_key file)
+      (lazy (OpamFilename.read file))
+      map
+  in
+  let add_file_if_exists map file =
+    if OpamFilename.exists file
+    then aux map file
+    else map
+  in
+  let map = OpamFilename.Unix.Map.empty in
+  let map = add_file_if_exists map OpamFilename.Op.(dir // "url") in
+  let map = add_file_if_exists map OpamFilename.Op.(dir // "descr") in
+  let files_dir = OpamFilename.Op.(dir / OpamPathName.files_d) in
+  List.fold_left aux map (OpamFilename.rec_files files_dir)
 
 let get_contents ~repo_root dir =
   let file = OpamFilename.Op.(dir // OpamPathName.opam_f) in

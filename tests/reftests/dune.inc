@@ -1743,6 +1743,27 @@
    (run ./run.exe %{exe:../../src/client/opamMain.exe.exe} %{dep:orphans.test} %{read-lines:testing-env}))))
 
 (rule
+ (alias reftest-package-legacy-sidefiles)
+ (enabled_if (and  (or (<> %{env:TESTALL=1} 0) (= %{env:TESTN0REP0=0} 1))))
+ (action
+  (diff package-legacy-sidefiles.test package-legacy-sidefiles.out)))
+
+(alias
+ (name reftest)
+ (enabled_if (and  (or (<> %{env:TESTALL=1} 0) (= %{env:TESTN0REP0=0} 1))))
+ (deps (alias reftest-package-legacy-sidefiles)))
+
+(rule
+ (targets package-legacy-sidefiles.out)
+ (deps root-N0REP0)
+ (enabled_if (and  (or (<> %{env:TESTALL=1} 0) (= %{env:TESTN0REP0=0} 1))))
+ (package opam)
+ (action
+  (with-stdout-to
+   %{targets}
+   (run ./run.exe %{exe:../../src/client/opamMain.exe.exe} %{dep:package-legacy-sidefiles.test} %{read-lines:testing-env}))))
+
+(rule
  (alias reftest-parallel)
  (enabled_if (and  (or (<> %{env:TESTALL=1} 0) (= %{env:TESTN0REP0=0} 1))))
  (action

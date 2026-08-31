@@ -700,3 +700,291 @@ The following actions will be performed:
 <><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 -> installed good-nested-md5.1
 Done.
+### ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+### : Make sure extra-files aren't scanned in any of the other special directories
+### : when pinned from a local directory
+### ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+### : with the opam file in the root directory of the project
+### opam switch create extra-files-location --empty
+### rm -rf local-pkg
+### <local-pkg/standalone-file>
+Some random unused file
+### <local-pkg/files/some-extrafile>
+here is an extra file
+### <local-pkg/files/dir/some-other-extrafile>
+here is another extra file
+### <local-pkg/opam/file-in-opam-dir>
+This shouldn't be an extrafile
+### <local-pkg/opam/files/file-in-opam-dir-slash-files>
+This shouldn't be an extrafile either
+### openssl md5 local-pkg/standalone-file | '.*= ' -> '' >$ STANDALONE_MD5
+### openssl md5 local-pkg/files/some-extrafile | '.*= ' -> '' >$ EXTRAFILE_MD5
+### openssl md5 local-pkg/files/dir/some-other-extrafile | '.*= ' -> '' >$ OTHEREXTRAFILE_MD5
+### openssl md5 local-pkg/opam/file-in-opam-dir | '.*= ' -> '' >$ FILEINOPAM_MD5
+### openssl md5 local-pkg/opam/files/file-in-opam-dir-slash-files | '.*= ' -> '' >$ FILEINOPAMSLASHFILES_MD5
+### <extrafiles.sh>
+#!/bin/sh
+
+set -eu
+
+cat > "$1" << EOF
+opam-version: "2.0"
+build: [
+  ["test" "-f" "standalone-file"]
+  ["test" "-f" "some-extrafile"]
+  ["test" "-f" "dir/some-other-extrafile"]
+  ["test" "!" "-f" "file-in-opam-dir"]
+  ["test" "!" "-f" "file-in-opam-dir-slash-files"]
+]
+extra-files: [
+  ["standalone-file" "md5=$STANDALONE_MD5"]
+  ["some-extrafile" "md5=$EXTRAFILE_MD5"]
+  ["dir/some-other-extrafile" "md5=$OTHEREXTRAFILE_MD5"]
+  ["file-in-opam-dir" "md5=$FILEINOPAM_MD5"]
+  ["file-in-opam-dir-slash-files" "md5=$FILEINOPAMSLASHFILES_MD5"]
+]
+EOF
+### sh extrafiles.sh local-pkg/local-pkg.opam
+### opam show --no-lint --raw -f name,version,build,extra-files,url.src,url.checksum local-pkg/local-pkg.opam
+name:         "local-pkg"
+version:      "dev"
+build:        ["test" "-f" "standalone-file"]
+              ["test" "-f" "some-extrafile"]
+              ["test" "-f" "dir/some-other-extrafile"]
+              ["test" "!" "-f" "file-in-opam-dir"]
+              ["test" "!" "-f" "file-in-opam-dir-slash-files"]
+extra-files:  ["standalone-file" "md5=d3f734eb19ab1034a28b6c6906a3abb4"]
+              ["some-extrafile" "md5=daa4f25318ffd269629acc4c5dd6af1f"]
+              ["dir/some-other-extrafile" "md5=83818bf129403aba49ac140d109c03d5"]
+              ["file-in-opam-dir" "md5=0e0423ece5bb01b9093d04ac41aab85c"]
+              ["file-in-opam-dir-slash-files" "md5=24065d44a4a481ec928dedd084541f1b"]
+url.src:
+url.checksum:
+### opam pin -n ./local-pkg
+[NOTE] Package local-pkg does not exist in opam repositories registered in the current switch.
+[WARNING] Overlay file of local-pkg standalone-file not found, ignoring
+[WARNING] Overlay file of local-pkg file-in-opam-dir not found, ignoring
+[WARNING] Overlay file of local-pkg file-in-opam-dir-slash-files not found, ignoring
+local-pkg is now pinned to file://${BASEDIR}/local-pkg (version dev)
+### opam show --no-lint --raw -f name,version,build,extra-files,url.src,url.checksum local-pkg.dev
+name:         "local-pkg"
+version:      "dev"
+build:        ["test" "-f" "standalone-file"]
+              ["test" "-f" "some-extrafile"]
+              ["test" "-f" "dir/some-other-extrafile"]
+              ["test" "!" "-f" "file-in-opam-dir"]
+              ["test" "!" "-f" "file-in-opam-dir-slash-files"]
+extra-files:  ["some-extrafile" "md5=daa4f25318ffd269629acc4c5dd6af1f"]
+              ["dir/some-other-extrafile" "md5=83818bf129403aba49ac140d109c03d5"]
+url.src:      "file://${BASEDIR}/local-pkg"
+url.checksum:
+### opam install --verbose-on local-pkg local-pkg | sed-cmd test
+
+<><> Synchronising pinned packages ><><><><><><><><><><><><><><><><><><><><><><>
+[local-pkg.dev] synchronised (no changes)
+
+The following actions will be performed:
+=== install 1 package
+  - install local-pkg dev (pinned)
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+-> retrieved local-pkg.dev  (file://${BASEDIR}/local-pkg)
++ test "-f" "standalone-file" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "-f" "some-extrafile" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "-f" "dir/some-other-extrafile" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "!" "-f" "file-in-opam-dir" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "!" "-f" "file-in-opam-dir-slash-files" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
+-> compiled  local-pkg.dev
+-> installed local-pkg.dev
+Done.
+### opam unpin ./local-pkg
+Ok, local-pkg is no longer pinned to file://${BASEDIR}/local-pkg (version dev)
+The following actions will be performed:
+=== remove 1 package
+  - remove local-pkg dev
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+-> removed   local-pkg.dev
+Done.
+### opam install --verbose-on local-pkg ./local-pkg | sed-cmd test
+[WARNING] Failed checks on local-pkg package definition from source at file://${BASEDIR}/local-pkg:
+             error 23: Missing field 'maintainer'
+           warning 25: Missing field 'authors'
+           warning 35: Missing field 'homepage'
+           warning 36: Missing field 'bug-reports'
+             error 57: Synopsis must not be empty
+           warning 68: Missing field 'license'
+[NOTE] Package local-pkg does not exist in opam repositories registered in the current switch.
+[WARNING] Overlay file of local-pkg standalone-file not found, ignoring
+[WARNING] Overlay file of local-pkg file-in-opam-dir not found, ignoring
+[WARNING] Overlay file of local-pkg file-in-opam-dir-slash-files not found, ignoring
+local-pkg is now pinned to file://${BASEDIR}/local-pkg (version dev)
+The following actions will be performed:
+=== install 1 package
+  - install local-pkg dev (pinned)
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+-> retrieved local-pkg.dev  (file://${BASEDIR}/local-pkg)
++ test "-f" "standalone-file" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "-f" "some-extrafile" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "-f" "dir/some-other-extrafile" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "!" "-f" "file-in-opam-dir" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "!" "-f" "file-in-opam-dir-slash-files" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
+-> compiled  local-pkg.dev
+-> installed local-pkg.dev
+Done.
+### opam show --no-lint --raw -f name,version,build,extra-files,url.src,url.checksum local-pkg.dev
+name:         "local-pkg"
+version:      "dev"
+build:        ["test" "-f" "standalone-file"]
+              ["test" "-f" "some-extrafile"]
+              ["test" "-f" "dir/some-other-extrafile"]
+              ["test" "!" "-f" "file-in-opam-dir"]
+              ["test" "!" "-f" "file-in-opam-dir-slash-files"]
+extra-files:  ["some-extrafile" "md5=daa4f25318ffd269629acc4c5dd6af1f"]
+              ["dir/some-other-extrafile" "md5=83818bf129403aba49ac140d109c03d5"]
+url.src:      "file://${BASEDIR}/local-pkg"
+url.checksum:
+### opam unpin local-pkg
+Ok, local-pkg is no longer pinned to file://${BASEDIR}/local-pkg (version dev)
+The following actions will be performed:
+=== remove 1 package
+  - remove local-pkg dev
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+-> removed   local-pkg.dev
+Done.
+### : with the opam file in the opam/ directory of the project
+### <extrafiles.sh>
+#!/bin/sh
+
+set -eu
+
+cat > "$1" << EOF
+opam-version: "2.0"
+build: [
+  ["test" "-f" "standalone-file"]
+  ["test" "!" "-f" "some-extrafile"]
+  ["test" "!" "-f" "dir/some-other-extrafile"]
+  ["test" "!" "-f" "file-in-opam-dir"]
+  ["test" "-f" "file-in-opam-dir-slash-files"]
+]
+extra-files: [
+  ["standalone-file" "md5=$STANDALONE_MD5"]
+  ["some-extrafile" "md5=$EXTRAFILE_MD5"]
+  ["dir/some-other-extrafile" "md5=$OTHEREXTRAFILE_MD5"]
+  ["file-in-opam-dir" "md5=$FILEINOPAM_MD5"]
+  ["file-in-opam-dir-slash-files" "md5=$FILEINOPAMSLASHFILES_MD5"]
+]
+EOF
+### rm local-pkg/local-pkg.opam
+### sh extrafiles.sh local-pkg/opam/opam
+### opam show --no-lint --raw -f name,version,build,extra-files,url.src,url.checksum local-pkg/
+name:         "local-pkg"
+version:      "dev"
+build:        ["test" "-f" "standalone-file"]
+              ["test" "!" "-f" "some-extrafile"]
+              ["test" "!" "-f" "dir/some-other-extrafile"]
+              ["test" "!" "-f" "file-in-opam-dir"]
+              ["test" "-f" "file-in-opam-dir-slash-files"]
+extra-files:  ["standalone-file" "md5=d3f734eb19ab1034a28b6c6906a3abb4"]
+              ["some-extrafile" "md5=daa4f25318ffd269629acc4c5dd6af1f"]
+              ["dir/some-other-extrafile" "md5=83818bf129403aba49ac140d109c03d5"]
+              ["file-in-opam-dir" "md5=0e0423ece5bb01b9093d04ac41aab85c"]
+              ["file-in-opam-dir-slash-files" "md5=24065d44a4a481ec928dedd084541f1b"]
+url.src:
+url.checksum:
+### opam pin -n ./local-pkg
+[NOTE] Package local-pkg does not exist in opam repositories registered in the current switch.
+[WARNING] Overlay file of local-pkg standalone-file not found, ignoring
+[WARNING] Overlay file of local-pkg some-extrafile not found, ignoring
+[WARNING] Overlay file of local-pkg dir/some-other-extrafile not found, ignoring
+[WARNING] Overlay file of local-pkg file-in-opam-dir not found, ignoring
+local-pkg is now pinned to file://${BASEDIR}/local-pkg (version dev)
+### opam show --no-lint --raw -f name,version,build,extra-files,url.src,url.checksum local-pkg.dev
+name:         "local-pkg"
+version:      "dev"
+build:        ["test" "-f" "standalone-file"]
+              ["test" "!" "-f" "some-extrafile"]
+              ["test" "!" "-f" "dir/some-other-extrafile"]
+              ["test" "!" "-f" "file-in-opam-dir"]
+              ["test" "-f" "file-in-opam-dir-slash-files"]
+extra-files:  "file-in-opam-dir-slash-files" "md5=24065d44a4a481ec928dedd084541f1b"
+url.src:      "file://${BASEDIR}/local-pkg"
+url.checksum:
+### opam install --verbose-on local-pkg local-pkg | sed-cmd test
+
+<><> Synchronising pinned packages ><><><><><><><><><><><><><><><><><><><><><><>
+[local-pkg.dev] synchronised (no changes)
+
+The following actions will be performed:
+=== install 1 package
+  - install local-pkg dev (pinned)
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+-> retrieved local-pkg.dev  (file://${BASEDIR}/local-pkg)
++ test "-f" "standalone-file" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "!" "-f" "some-extrafile" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "!" "-f" "dir/some-other-extrafile" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "!" "-f" "file-in-opam-dir" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "-f" "file-in-opam-dir-slash-files" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
+-> compiled  local-pkg.dev
+-> installed local-pkg.dev
+Done.
+### opam unpin ./local-pkg
+Ok, local-pkg is no longer pinned to file://${BASEDIR}/local-pkg (version dev)
+The following actions will be performed:
+=== remove 1 package
+  - remove local-pkg dev
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+-> removed   local-pkg.dev
+Done.
+### opam install --verbose-on local-pkg ./local-pkg | sed-cmd test
+[WARNING] Failed checks on local-pkg package definition from source at file://${BASEDIR}/local-pkg:
+             error 23: Missing field 'maintainer'
+           warning 25: Missing field 'authors'
+           warning 35: Missing field 'homepage'
+           warning 36: Missing field 'bug-reports'
+             error 57: Synopsis must not be empty
+           warning 68: Missing field 'license'
+[NOTE] Package local-pkg does not exist in opam repositories registered in the current switch.
+[WARNING] Overlay file of local-pkg standalone-file not found, ignoring
+[WARNING] Overlay file of local-pkg some-extrafile not found, ignoring
+[WARNING] Overlay file of local-pkg dir/some-other-extrafile not found, ignoring
+[WARNING] Overlay file of local-pkg file-in-opam-dir not found, ignoring
+local-pkg is now pinned to file://${BASEDIR}/local-pkg (version dev)
+The following actions will be performed:
+=== install 1 package
+  - install local-pkg dev (pinned)
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+-> retrieved local-pkg.dev  (file://${BASEDIR}/local-pkg)
++ test "-f" "standalone-file" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "!" "-f" "some-extrafile" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "!" "-f" "dir/some-other-extrafile" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "!" "-f" "file-in-opam-dir" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
++ test "-f" "file-in-opam-dir-slash-files" (CWD=${BASEDIR}/OPAM/extra-files-location/.opam-switch/build/local-pkg.dev)
+-> compiled  local-pkg.dev
+-> installed local-pkg.dev
+Done.
+### opam show --no-lint --raw -f name,version,build,extra-files,url.src,url.checksum local-pkg.dev
+name:         "local-pkg"
+version:      "dev"
+build:        ["test" "-f" "standalone-file"]
+              ["test" "!" "-f" "some-extrafile"]
+              ["test" "!" "-f" "dir/some-other-extrafile"]
+              ["test" "!" "-f" "file-in-opam-dir"]
+              ["test" "-f" "file-in-opam-dir-slash-files"]
+extra-files:  "file-in-opam-dir-slash-files" "md5=24065d44a4a481ec928dedd084541f1b"
+url.src:      "file://${BASEDIR}/local-pkg"
+url.checksum:
+### opam unpin local-pkg
+Ok, local-pkg is no longer pinned to file://${BASEDIR}/local-pkg (version dev)
+The following actions will be performed:
+=== remove 1 package
+  - remove local-pkg dev
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+-> removed   local-pkg.dev
+Done.
