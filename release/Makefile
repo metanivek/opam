@@ -50,7 +50,7 @@ build/Dockerfile.x86_64-linux: Dockerfile.in
 build/Dockerfile.i686-linux: Dockerfile.in
 	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/x86-v$(ALPINE_VERSION)/g' $^ >$@
 build/Dockerfile.armhf-linux: Dockerfile.in
-	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/armv7-v$(ALPINE_VERSION)/g' $^ >$@
+	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/armhf-v$(ALPINE_VERSION)/g' $^ >$@
 build/Dockerfile.arm64-linux: Dockerfile.in
 	mkdir -p build && sed -e "s/%OCAMLV%/$(OCAMLV)/g" -e 's/%TARGET_TAG%/arm64-v$(ALPINE_VERSION)/g' $^ >$@
 build/Dockerfile.ppc64le-linux: Dockerfile.in
