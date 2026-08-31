@@ -77,6 +77,7 @@ users)
 ## Release scripts
 
 ## Install script
+  * Add 2.6.0\~beta2 to the install scripts [#7119 @kit-ty-kate]
 
 ## Admin
 
