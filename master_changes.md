@@ -107,6 +107,7 @@ users)
 
 ## Reftests
 ### Tests
+  * Add an exhaustive test showing the behaviour of the `conflicts` field [#7127 @kit-ty-kate]
 
 ### Engine
 
