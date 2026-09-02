@@ -113,6 +113,7 @@ users)
 ## Github Actions
 
 ## Doc
+  * Fix the manual on conjunctions in conflicts version formula [#7082 @RyanGibb]
 
 ## Security fixes
 
