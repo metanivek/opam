@@ -93,6 +93,7 @@ users)
 ## Shell
 
 ## Internal
+  * Add a debug log upon reading an archive [#7131 @kit-ty-kate]
 
 ## Internal: Unix
 

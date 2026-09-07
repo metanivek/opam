@@ -94,7 +94,9 @@ let fold_reg_files_aux archive f acc fd =
   run archive fd (Tar_gz.in_gzipped (Tar.fold go acc))
 
 let fold_reg_files f acc archive =
-  let fd = Unix.openfile (OpamFilename.to_string archive) [Unix.O_RDONLY] 0 in
+  let archive_str = OpamFilename.to_string archive in
+  log "Open archive %s" archive_str;
+  let fd = Unix.openfile archive_str [Unix.O_RDONLY] 0 in
   Fun.protect ~finally:(fun () -> Unix.close fd) @@ fun () ->
   fold_reg_files_aux archive f acc fd
 

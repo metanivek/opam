@@ -39,6 +39,11 @@ some content
 ### OPAMDEBUG=-1 OPAMDEBUGSECTIONS=TAR opam update default | grep TAR
 TAR                             creating archive ${BASEDIR}/OPAM/repo/default.tar.gz from ${BASEDIR}/OPAM/repo/default
 TAR                             creating archive ${BASEDIR}/OPAM/repo/default.tar.gz.new from ${BASEDIR}/REPO
+TAR                             Open archive ${BASEDIR}/OPAM/repo/default.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/default.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/default.tar.gz.new
+TAR                             Open archive ${BASEDIR}/OPAM/repo/default.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/default.tar.gz
 ### ls $OPAMROOT/repo
 default.tar.gz
 lock
@@ -76,6 +81,11 @@ some content
 ### sh hash.sh REPO foo.4
 ### OPAMDEBUG=-1 OPAMDEBUGSECTIONS=TAR opam update -vv | grep '^(\+|TAR)' | sed-cmd tar
 TAR                             creating archive ${BASEDIR}/OPAM/repo/tarred.tar.gz.new from ${BASEDIR}/REPO
+TAR                             Open archive ${BASEDIR}/OPAM/repo/tarred.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/tarred.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/tarred.tar.gz.new
+TAR                             Open archive ${BASEDIR}/OPAM/repo/tarred.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/tarred.tar.gz
 ### opam install foo.4 -vv | grep '^\+' | sed-cmd test tar
 + test "-f" "baz" (CWD=${BASEDIR}/OPAM/tarring/.opam-switch/build/foo.4)
 ### mkdir tarred-ext
@@ -1041,9 +1051,11 @@ TAR                             creating archive ${BASEDIR}/OPAM/repo/changes.ta
 TAR                             Writing archive ${BASEDIR}/OPAM/repo/changes.tar.gz.new
 REPOSITORY                      changes: applying update from scratch at ${BASEDIR}/OPAM/repo/changes.tar.gz.new
 [changes] Initialised
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
 UPDATE                          Repository has new changes
 Processing: [changes: loading data]
 RSTATE                          load repo changes from tgz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
 ### test -d OPAM/repo/changes
 # Return code 1 #
 ### test -d OPAM/repo/changes/.git
@@ -1165,9 +1177,11 @@ TAR                             creating archive ${BASEDIR}/OPAM/repo/changes.ta
 TAR                             Writing archive ${BASEDIR}/OPAM/repo/changes.tar.gz.new
 REPOSITORY                      changes: applying update from scratch at ${BASEDIR}/OPAM/repo/changes.tar.gz.new
 [changes] Initialised
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
 UPDATE                          Repository has new changes
 Processing: [changes: loading data]
 RSTATE                          load repo changes from tgz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
 ### test -f OPAM/repo/changes.tar.gz
 ### opam reinstall sin
 FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
@@ -1178,8 +1192,10 @@ The following actions will be performed:
   - recompile sin 2
 
 <><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
 -> removed   sin.2
 -> installed sin.2
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
 Done.
 ### :: git - local tarred * changes
 ### OPAMREPOSITORYTARRING=1
@@ -1202,14 +1218,19 @@ TAR                             Writing archive ${BASEDIR}/OPAM/repo/changes.tar
 REPOSITORY                      update changes from file://${BASEDIR}/CHG
 TAR                             creating archive ${BASEDIR}/OPAM/repo/changes.tar.gz.new from ${BASEDIR}/CHG
 TAR                             Writing archive ${BASEDIR}/OPAM/repo/changes.tar.gz.new
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
 REPO_BACKEND                    diff: ${BASEDIR}/OPAM/repo/{changes.tar.gz,changes.tar.gz.new}
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz.new
 REPO_BACKEND                    Internal diff (non-empty, 2 changed files) done in 0.00s.
 [changes] synchronised from file://${BASEDIR}/CHG
 REPOSITORY                      changes: applying patch update at ${BASEDIR}/OPAM/log/patch-xxx
 TAR                             Writing archive ${BASEDIR}/OPAM/repo/changes.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
 UPDATE                          Repository has new changes
 Processing: [changes: loading data]
 RSTATE                          load repo changes from diff
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
 Now run 'opam upgrade' to apply any package updates.
 ### test -d OPAM/repo/changes
 # Return code 1 #
@@ -1225,7 +1246,9 @@ The following actions will be performed:
   - install krad 3
 
 <><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
 -> installed krad.3
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
 Done.
 ### :: local dir - git * no changes
 ### OPAMREPOSITORYTARRING=0
@@ -1449,9 +1472,11 @@ TAR                             creating archive ${BASEDIR}/OPAM/repo/changes.ta
 TAR                             Writing archive ${BASEDIR}/OPAM/repo/changes.tar.gz.new
 REPOSITORY                      changes: applying update from scratch at ${BASEDIR}/OPAM/repo/changes.tar.gz.new
 [changes] Initialised
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
 UPDATE                          Repository has new changes
 Processing: [changes: loading data]
 RSTATE                          load repo changes from tgz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/changes.tar.gz
 ### test -d OPAM/repo/changes
 # Return code 1 #
 ### test -d OPAM/repo/changes/.git
@@ -1488,6 +1513,7 @@ old-tarred/repo
 ### # We need to grep over SUCCESS because of sandbox re enabled on format upgrade reinit, see #6968
 ### opam repo add empty-r ./empty-repo | sed-cmd tar | grep -v SUCCESS | grep -v 'cygpath\.exe' | grep -v 'cygwin'
 FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz
 FMT_UPG                         Hard config upgrade, from 2.5.0 to 2.6~alpha
 This version of opam requires an update to the layout of ${BASEDIR}/OPAM from version 2.5.0 to version 2.6~alpha, which can't be reverted.
 You may want to back it up before going further.
@@ -1504,13 +1530,18 @@ RSTATE                          LOAD-REPOSITORY-STATE @ ${BASEDIR}/OPAM
 RSTATE                          No cache found
 Processing: [old-tarred: loading data]
 RSTATE                          load repo old-tarred from tgz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz
 RSTATE                          read repo
 RSTATE                          loaded opam files from repo old-tarred in 0.000s
 
 <><> Updating repositories ><><><><><><><><><><><><><><><><><><><><><><><><><><>
 TAR                             creating archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz.new from ${BASEDIR}/old-tarred
 TAR                             Writing archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz.new
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz.new
 [old-tarred] no changes from file://${BASEDIR}/old-tarred
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz
 Update done, please now retry your command.
 # Return code 10 #
 ### tar tf OPAM/repo/old-tarred.tar.gz | grep repo
@@ -1542,7 +1573,9 @@ RSTATE                          loaded opam files from repo old-tarred in 0.000s
 TAR                             creating archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz.new from ${BASEDIR}/old-tarred
 TAR                             Writing archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz.new
 [old-tarred] Initialised
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz
 RSTATE                          load repo old-tarred from tgz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz
 RSTATE                          read repo
 ### opam switch create empty --empty
 FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
@@ -1558,6 +1591,7 @@ opam-root-version: "2.5.0"
 old-tarred/repo
 ### opam update | sed-cmd tar | grep -v SUCCESS | grep -v 'cygpath\.exe' | grep -v 'cygwin'
 FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz
 FMT_UPG                         Hard config upgrade, from 2.5.0 to 2.6~alpha
 This version of opam requires an update to the layout of ${BASEDIR}/OPAM from version 2.5.0 to version 2.6~alpha, which can't be reverted.
 You may want to back it up before going further.
@@ -1574,13 +1608,18 @@ RSTATE                          LOAD-REPOSITORY-STATE @ ${BASEDIR}/OPAM
 RSTATE                          No cache found
 Processing: [old-tarred: loading data]
 RSTATE                          load repo old-tarred from tgz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz
 RSTATE                          read repo
 RSTATE                          loaded opam files from repo old-tarred in 0.000s
 
 <><> Updating repositories ><><><><><><><><><><><><><><><><><><><><><><><><><><>
 TAR                             creating archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz.new from ${BASEDIR}/old-tarred
 TAR                             Writing archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz.new
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz.new
 [old-tarred] no changes from file://${BASEDIR}/old-tarred
+TAR                             Open archive ${BASEDIR}/OPAM/repo/old-tarred.tar.gz
 Update done, please now retry your command.
 # Return code 10 #
 ### tar tf OPAM/repo/old-tarred.tar.gz | grep repo
