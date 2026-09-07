@@ -104,6 +104,7 @@ users)
 
 ## Reftests
 ### Tests
+  * Add a test showing the internal actions of `opam install` when installing packages from an http repository [#7131 @kit-ty-kate]
 
 ### Engine
 
