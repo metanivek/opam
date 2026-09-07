@@ -71,15 +71,12 @@ users)
 ## VCS
 
 ## Build
-  * Upgrade the download-if-missing dependencies to their latest version available for us to use (ocaml.4.14.4, base64.3.5.2, spdx\_licenses.1.5.0, menhir.20260209, patch.3.1.2, checkseum.0.5.3) [#7116 @kit-ty-kate]
 
 ## Infrastructure
 
 ## Release scripts
-  * Update the OCaml compiler used for release to 4.14.4 [#7116 @kit-ty-kate]
 
 ## Install script
-  * Add 2.6.0\~beta2 to the install scripts [#7119 @kit-ty-kate]
 
 ## Admin
 
@@ -113,7 +110,6 @@ users)
 ## Github Actions
 
 ## Doc
-  * Fix the manual on conjunctions in conflicts version formula [#7082 @RyanGibb]
 
 ## Security fixes
 

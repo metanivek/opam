@@ -3,6 +3,14 @@ repositories (changes that are automatically handled by the format upgrade tools
 are not marked). Those prefixed with "(+)" are new command/option (since
 2.1.0~alpha2).
 
+2.6.0~rc1:
+* Upgrade the "lockfile" with all the most up-to-date dependencies available
+  (ocaml.4.14.4, base64.3.5.2, spdx\_licenses.1.5.0, menhir.20260209,
+   patch.3.1.2, checkseum.0.5.3)
+  [#7116 @kit-ty-kate]
+* Update the OCaml compiler used for releases to 4.14.4 [#7116 @kit-ty-kate]
+* Improve the documentation [#7082 @RyanGibb]
+
 2.6.0~beta2:
 * Fix a performance regression where opam project trees were scanned for
   nothing, when pinning them [#7101 @kit-ty-kate - fix #7098]
