@@ -23,6 +23,7 @@ users)
 ## Actions
 
 ## Install
+  * Fix a 2.6 performance regression where tar.gz repositories were read entirely twice per package installed [#7131 @kit-ty-kate]
 
 ## Build (package)
 

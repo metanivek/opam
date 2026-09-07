@@ -364,12 +364,10 @@ The following actions will be performed:
   - install to-install 1
 
 <><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
-TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 Processing  2/3: [to-install: true]
 + true (CWD=${BASEDIR}/OPAM/install/.opam-switch/build/to-install.1)
 -> compiled  to-install.1
 -> installed to-install.1
-TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 Done.
 ### opam install extra-files-no-field | sed-cmd test
 FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
@@ -380,12 +378,10 @@ The following actions will be performed:
   - install extra-files-no-field 1
 
 <><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
-TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 Processing  2/3: [extra-files-no-field: test !]
 + test "!" "-f" "some-file" (CWD=${BASEDIR}/OPAM/install/.opam-switch/build/extra-files-no-field.1)
 -> compiled  extra-files-no-field.1
 -> installed extra-files-no-field.1
-TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 Done.
 ### opam install extra-files-legacy-no-field | sed-cmd test
 FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
@@ -396,7 +392,6 @@ The following actions will be performed:
   - install extra-files-legacy-no-field 1
 
 <><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
-TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 Processing  2/3: [extra-files-legacy-no-field: test some-file]
 + test "-f" "some-file" (CWD=${BASEDIR}/OPAM/install/.opam-switch/build/extra-files-legacy-no-field.1)
 [ERROR] The compilation of extra-files-legacy-no-field.1 failed at "test -f some-file".
