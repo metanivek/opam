@@ -49,9 +49,12 @@ Processing  1/1: [http-repo: http]
 curl-or-wget -- "http://localhost:port/index.tar.gz"
 REPOSITORY                      http-repo: applying update from scratch at ${BASEDIR}/OPAM/repo/http-repo.tar.gz.new
 [http-repo] Initialised
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 UPDATE                          Repository has new changes
 Processing: [http-repo: loading data]
 RSTATE                          load repo http-repo from tgz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 ### unset OPAMDEBUGSECTIONS
 ### unset OPAMDEBUG
 ### unset OPAMVERBOSE
@@ -86,14 +89,20 @@ RSTATE                          Cache found
 REPOSITORY                      update http-repo from http://localhost:port
 Processing  1/1: [http-repo: http]
 curl-or-wget -- "http://localhost:port/index.tar.gz"
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 REPO_BACKEND                    diff: ${BASEDIR}/OPAM/repo/{http-repo.tar.gz,http-repo.tar.gz.new}
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz.new
 REPO_BACKEND                    Internal diff (non-empty, 3 changed files) done in 0.00s.
 [http-repo] synchronised from http://localhost:port
 REPOSITORY                      http-repo: applying patch update at ${BASEDIR}/OPAM/log/patch-xxx
 TAR                             Writing archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 UPDATE                          Repository has new changes
 Processing: [http-repo: loading data]
 RSTATE                          load repo http-repo from diff
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 Now run 'opam upgrade' to apply any package updates.
 ### unset OPAMDEBUGSECTIONS
 ### unset OPAMDEBUG
@@ -125,14 +134,20 @@ RSTATE                          Cache found
 REPOSITORY                      update http-repo from http://localhost:port
 Processing  1/1: [http-repo: http]
 curl-or-wget -- "http://localhost:port/index.tar.gz"
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 REPO_BACKEND                    diff: ${BASEDIR}/OPAM/repo/{http-repo.tar.gz,http-repo.tar.gz.new}
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz.new
 REPO_BACKEND                    Internal diff (non-empty, 1 changed files) done in 0.00s.
 [http-repo] synchronised from http://localhost:port
 REPOSITORY                      http-repo: applying patch update at ${BASEDIR}/OPAM/log/patch-xxx
 TAR                             Writing archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 UPDATE                          Repository has new changes
 Processing: [http-repo: loading data]
 RSTATE                          load repo http-repo from diff
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 Now run 'opam upgrade' to apply any package updates.
 ### unset OPAMDEBUGSECTIONS
 ### unset OPAMDEBUG
@@ -165,14 +180,20 @@ RSTATE                          Cache found
 REPOSITORY                      update http-repo from http://localhost:port
 Processing  1/1: [http-repo: http]
 curl-or-wget -- "http://localhost:port/index.tar.gz"
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 REPO_BACKEND                    diff: ${BASEDIR}/OPAM/repo/{http-repo.tar.gz,http-repo.tar.gz.new}
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz.new
 REPO_BACKEND                    Internal diff (non-empty, 1 changed files) done in 0.00s.
 [http-repo] synchronised from http://localhost:port
 REPOSITORY                      http-repo: applying patch update at ${BASEDIR}/OPAM/log/patch-xxx
 TAR                             Writing archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 UPDATE                          Repository has new changes
 Processing: [http-repo: loading data]
 RSTATE                          load repo http-repo from diff
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 ### unset OPAMDEBUGSECTIONS
 ### unset OPAMDEBUG
 ### unset OPAMVERBOSE
@@ -245,14 +266,20 @@ TAR                             Writing archive ${BASEDIR}/OPAM/repo/http-repo.t
 REPOSITORY                      update http-repo from http://localhost:port
 Processing  1/1: [http-repo: http]
 curl-or-wget -- "http://localhost:port/index.tar.gz"
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 REPO_BACKEND                    diff: ${BASEDIR}/OPAM/repo/{http-repo.tar.gz,http-repo.tar.gz.new}
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz.new
 REPO_BACKEND                    Internal diff (non-empty, 4 changed files) done in 0.00s.
 [http-repo] synchronised from http://localhost:port
 REPOSITORY                      http-repo: applying patch update at ${BASEDIR}/OPAM/log/patch-xxx
 TAR                             Writing archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 UPDATE                          Repository has new changes
 Processing: [http-repo: loading data]
 RSTATE                          load repo http-repo from diff
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
 Now run 'opam upgrade' to apply any package updates.
 ### unset OPAMDEBUGSECTIONS
 ### unset OPAMDEBUG
@@ -266,4 +293,161 @@ empat   --
 enam    --
 lima    --
 satu    --
+### :VII: Install packages from http repository and extra files handling
+### <repo>
+opam-version: "1.2"
+### <packages/to-install.1/opam>
+opam-version: "2.0"
+build: "true"
+### <packages/extra-files-no-field.1/opam>
+opam-version: "2.0"
+build: [
+  ["test" "!" "-f" "some-file"]
+]
+### <packages/extra-files-no-field.1/files/some-file>
+some file
+### <packages/extra-files-legacy-no-field.1/opam>
+opam-version: "1.2"
+build: [
+  ["test" "-f" "some-file"]
+]
+### <packages/extra-files-legacy-no-field.1/files/some-file>
+some file
+### <packages/extra-files-with-field.1/opam>
+opam-version: "2.0"
+build: [
+  ["test" "-f" "some-file"]
+  ["test" "!" "-f" "some-other-file"]
+]
+### <packages/extra-files-with-field.1/files/some-file>
+some file
+### <packages/extra-files-with-field.1/files/some-other-file>
+some unlisted file
+### <packages/extra-files-legacy-with-field.1/opam>
+opam-version: "1.2"
+build: [
+  ["test" "-f" "some-file"]
+  ["test" "-f" "some-other-file"]
+]
+### <packages/extra-files-legacy-with-field.1/files/some-file>
+some file
+### <packages/extra-files-legacy-with-field.1/files/some-other-file>
+some unlisted file
+### openssl md5 packages/extra-files-no-field.1/files/some-file | '.*= ' -> '' >$ XMD5
+### <extrafile.sh>
+#!/bin/sh
+set -eu
+cat >> "$1" << EOF
+extra-files: ["some-file" "md5=$XMD5"]
+EOF
+### sh extrafile.sh packages/extra-files-with-field.1/opam
+### sh extrafile.sh packages/extra-files-legacy-with-field.1/opam
+### opam admin index
+[WARNING] The repository is at version 1.2, please consider upgrading to 2.0 with 'opam admin upgrade'
+Generating urls.txt...
+Generating index.tar.gz...
+Done.
+### sh remove-timestamp.sh
+### opam update http-repo | "${HTTPSERVERPORT}" -> "port"
+
+<><> Updating package repositories ><><><><><><><><><><><><><><><><><><><><><><>
+[http-repo] synchronised from http://localhost:port
+Now run 'opam upgrade' to apply any package updates.
+### opam switch create install --empty
+### OPAMDEBUGSECTIONS="TAR RSTATE REPOSITORY REPO_BACKEND UPDATE" OPAMDEBUG=-3 OPAMVERBOSE=2
+### opam install to-install | sed-cmd true
+FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
+RSTATE                          LOAD-REPOSITORY-STATE @ ${BASEDIR}/OPAM
+RSTATE                          Cache found
+The following actions will be performed:
+=== install 1 package
+  - install to-install 1
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+Processing  2/3: [to-install: true]
++ true (CWD=${BASEDIR}/OPAM/install/.opam-switch/build/to-install.1)
+-> compiled  to-install.1
+-> installed to-install.1
+Done.
+### opam install extra-files-no-field | sed-cmd test
+FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
+RSTATE                          LOAD-REPOSITORY-STATE @ ${BASEDIR}/OPAM
+RSTATE                          Cache found
+The following actions will be performed:
+=== install 1 package
+  - install extra-files-no-field 1
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+Processing  2/3: [extra-files-no-field: test !]
++ test "!" "-f" "some-file" (CWD=${BASEDIR}/OPAM/install/.opam-switch/build/extra-files-no-field.1)
+-> compiled  extra-files-no-field.1
+-> installed extra-files-no-field.1
+Done.
+### opam install extra-files-legacy-no-field | sed-cmd test
+FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
+RSTATE                          LOAD-REPOSITORY-STATE @ ${BASEDIR}/OPAM
+RSTATE                          Cache found
+The following actions will be performed:
+=== install 1 package
+  - install extra-files-legacy-no-field 1
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+Processing  2/3: [extra-files-legacy-no-field: test some-file]
++ test "-f" "some-file" (CWD=${BASEDIR}/OPAM/install/.opam-switch/build/extra-files-legacy-no-field.1)
+[ERROR] The compilation of extra-files-legacy-no-field.1 failed at "test -f some-file".
+
+
+
+
+<><> Error report <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
++- The following actions failed
+| - build extra-files-legacy-no-field 1
++- 
+- No changes have been performed
+'${OPAM} install extra-files-legacy-no-field' failed.
+# Return code 31 #
+### opam install extra-files-with-field | sed-cmd test
+FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
+RSTATE                          LOAD-REPOSITORY-STATE @ ${BASEDIR}/OPAM
+RSTATE                          Cache found
+The following actions will be performed:
+=== install 1 package
+  - install extra-files-with-field 1
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+Processing  2/3: [extra-files-with-field: test some-file]
++ test "-f" "some-file" (CWD=${BASEDIR}/OPAM/install/.opam-switch/build/extra-files-with-field.1)
+Processing  2/3: [extra-files-with-field: test !]
++ test "!" "-f" "some-other-file" (CWD=${BASEDIR}/OPAM/install/.opam-switch/build/extra-files-with-field.1)
+-> compiled  extra-files-with-field.1
+-> installed extra-files-with-field.1
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+Done.
+### opam install extra-files-legacy-with-field | sed-cmd test
+FILE(config)                    Read ${BASEDIR}/OPAM/config in 0.000s
+RSTATE                          LOAD-REPOSITORY-STATE @ ${BASEDIR}/OPAM
+RSTATE                          Cache found
+The following actions will be performed:
+=== install 1 package
+  - install extra-files-legacy-with-field 1
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+TAR                             Open archive ${BASEDIR}/OPAM/repo/http-repo.tar.gz
+Processing  2/3: [extra-files-legacy-with-field: test some-file]
++ test "-f" "some-file" (CWD=${BASEDIR}/OPAM/install/.opam-switch/build/extra-files-legacy-with-field.1)
+Processing  2/3: [extra-files-legacy-with-field: test some-other-file]
++ test "-f" "some-other-file" (CWD=${BASEDIR}/OPAM/install/.opam-switch/build/extra-files-legacy-with-field.1)
+[ERROR] The compilation of extra-files-legacy-with-field.1 failed at "test -f some-other-file".
+
+
+
+
+<><> Error report <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
++- The following actions failed
+| - build extra-files-legacy-with-field 1
++- 
+- No changes have been performed
+'${OPAM} install extra-files-legacy-with-field' failed.
+# Return code 31 #
 [[[Killing micro_httpd]]]

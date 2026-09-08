@@ -3682,31 +3682,31 @@ module OPAM = struct
 
   let get_extra_files ~get_repo_files o =
     let open OpamFilename.Op in
-    let open OpamStd.Option.Op in
-    (match metadata_dir o with
-     | None -> None
-     | Some (None, abs) ->
-       let files_dir = OpamFilename.Dir.of_string abs / OpamPathName.files_d in
-       extra_files o >>| List.map @@ fun (basename, hash) ->
-       let content =
-         let f = OpamFilename.create files_dir basename in
-         if OpamFilename.exists f then
-           Some (lazy (OpamFilename.read f))
-         else
-           None
-       in
-       (basename, content, hash)
-     | Some (Some r, rel) ->
-       let files =
-         get_repo_files r
-           (rel ^ Filename.dir_sep ^ OpamRepositoryPathName.files_d)
-       in
-       extra_files o >>| List.map @@ fun (basename, hash) ->
-       let content =
-         OpamStd.List.assoc_opt OpamFilename.Base.equal basename files
-       in
-       (basename, content, hash))
-    +! []
+    match extra_files o, metadata_dir o with
+    | (None | Some []), _ | _, None -> []
+    | Some extra_files, Some (None, abs) ->
+      let files_dir = OpamFilename.Dir.of_string abs / OpamPathName.files_d in
+      List.map (fun (basename, hash) ->
+          let content =
+            let f = OpamFilename.create files_dir basename in
+            if OpamFilename.exists f then
+              Some (lazy (OpamFilename.read f))
+            else
+              None
+          in
+          (basename, content, hash))
+        extra_files
+    | Some extra_files, Some (Some r, rel) ->
+      let files =
+        get_repo_files r
+          (rel ^ Filename.dir_sep ^ OpamRepositoryPathName.files_d)
+      in
+      List.map (fun (basename, hash) ->
+          let content =
+            OpamStd.List.assoc_opt OpamFilename.Base.equal basename files
+          in
+          (basename, content, hash))
+        extra_files
 
   let print_errors ?file o =
     if o.format_errors <> [] then
