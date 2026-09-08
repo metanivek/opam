@@ -79,6 +79,7 @@ users)
 ## Release scripts
 
 ## Install script
+  * Add opam 2.6.0\~rc1 to the install scripts [#7135 @kit-ty-kate]
 
 ## Admin
 
