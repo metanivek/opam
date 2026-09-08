@@ -23,7 +23,6 @@ users)
 ## Actions
 
 ## Install
-  * Fix a 2.6 performance regression where tar.gz repositories were read entirely twice per package installed [#7131 @kit-ty-kate]
 
 ## Build (package)
 
@@ -94,7 +93,6 @@ users)
 ## Shell
 
 ## Internal
-  * Add a debug log upon reading an archive [#7131 @kit-ty-kate]
 
 ## Internal: Unix
 
@@ -106,7 +104,6 @@ users)
 
 ## Reftests
 ### Tests
-  * Add a test showing the internal actions of `opam install` when installing packages from an http repository [#7131 @kit-ty-kate]
 
 ### Engine
 

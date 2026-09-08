@@ -4,11 +4,15 @@ are not marked). Those prefixed with "(+)" are new command/option (since
 2.1.0~alpha2).
 
 2.6.0~rc1:
+* Fix a 2.6 performance regression where tar.gz repositories were read
+  entirely twice per package installed [#7131 @kit-ty-kate]
 * Upgrade the "lockfile" with all the most up-to-date dependencies available
   (ocaml.4.14.4, base64.3.5.2, spdx\_licenses.1.5.0, menhir.20260209,
    patch.3.1.2, checkseum.0.5.3)
   [#7116 @kit-ty-kate]
 * Update the OCaml compiler used for releases to 4.14.4 [#7116 @kit-ty-kate]
+* Add a debug log upon reading an archive [#7131 @kit-ty-kate]
+* Improve and extend the testsuite [#7131 @kit-ty-kate]
 * Improve the documentation [#7082 @RyanGibb]
 
 2.6.0~beta2:
